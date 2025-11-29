@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Goblin Party - Bone Path Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Comic Sans MS', 'Comic Neue', cursive;
+            color: #fff;
+            background-color: #1a1a2e;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.5);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed; /* keep header always on top */
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 100;
+            box-shadow: 0 0 15px rgba(0,0,0,0.7);
+            border-bottom: 3px solid #42f57b;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background-color: #42f57b;
+            mask: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Goblin_icon.svg') center/contain no-repeat;
+            -webkit-mask: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Goblin_icon.svg') center/contain no-repeat;
+            margin-right: 10px;
+            border-radius: 12px;
+            animation: bounceLogo 3s infinite alternate;
+        }
+
+        @keyframes bounceLogo {
+            0% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-5px) rotate(5deg);
+            }
+
+            100% {
+                transform: translateY(0) rotate(-5deg);
+            }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+            color: #ffb347;
+        }
+
+        nav a {
+            color: #fff;
+            margin-left: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+            nav a:hover {
+                color: #4287f5;
+            }
+
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s ease;
+            padding-top: 100px; /* leave space for fixed header */
+        }
+
+            .hero h2 {
+                font-size: 3rem;
+                color: #ffb347;
+            }
+
+            .hero p {
+                font-size: 1.5rem;
+                color: #fff;
+                margin-top: 20px;
+                animation: fadeInText 2s ease forwards;
+                opacity: 0;
+            }
+
+        @keyframes fadeInText {
+            to {
+                opacity: 1;
+            }
+        }
+
+        .section {
+            padding: 80px 40px;
+            max-width: 1000px;
+            margin: auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s ease;
+        }
+
+        .coming-soon {
+            background-color: #2e2e4e;
+            border-radius: 20px;
+            padding: 50px;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(0,0,0,0.6);
+            border: 2px solid #42f57b;
+        }
+
+            .coming-soon h3 {
+                font-size: 2rem;
+                margin-bottom: 15px;
+                color: #ffb347;
+            }
+
+        .social-icons {
+            margin-top: 20px;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s ease;
+        }
+
+            .social-icons a {
+                margin: 0 10px;
+                text-decoration: none;
+                color: #fff;
+                font-size: 2rem;
+                transition: 0.3s;
+            }
+
+                .social-icons a:hover {
+                    color: #42f57b;
+                }
+
+        footer {
+            background: rgba(0,0,0,0.5);
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+            color: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.7) inset;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: 1s ease;
+            border-top: 3px solid #4287f5;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <div class="logo-icon"></div>
+            <h1>Goblin Party</h1>
+        </div>
+        <nav>
+            <a href="#projects">Games</a>
+            <a href="#news">News</a>
+            <a href="#contact">Contact</a>
+            <a href="#about">About</a>
+        </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+        <h2>Coming Soon: Bone Path!</h2>
+        <p>We are hard at work creating an immersive adventure. Stay tuned for updates!</p>
+    </section>
+
+    <section class="section" id="projects">
+        <h2>Our Projects</h2>
+        <div class="coming-soon">
+            <h3>Bone Path</h3>
+            <p>Exciting new gameplay and adventures await. Launching soon!</p>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <h2>About Us</h2>
+        <p>
+            Goblin Party is a group of passionate young developers who started learning video game development together.
+            We created our first Metroidvania game, <strong>Bone Path</strong>, and we are determined to keep pushing boundaries and bring even more exciting games in the future.
+        </p>
+    </section>
+
+    <section class="section" id="contact">
+        <h2>Contact</h2>
+        <p>Email: goblinparty.official@gmail.com</p>
+        <div class="social-icons">
+            <a href="https://www.youtube.com/@GoblinPartyOfficial" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2025 Goblin Party</p>
+    </footer>
+
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.hero, .section, .coming-soon, .social-icons, footer').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
