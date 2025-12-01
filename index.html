@@ -1,314 +1,112 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Goblin Party</title>
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Montserrat', sans-serif;
-            color: #fff;
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
-            overflow-x: hidden;
-            animation: backgroundShift 20s infinite alternate;
-        }
-
-        @keyframes backgroundShift {
-            0% { background-position: 0% 50%; }
-            100% { background-position: 100% 50%; }
-        }
-
-        header {
-            background: rgba(0,0,0,0.8);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 0 20px rgba(0,0,0,0.7);
-            border-bottom: 4px solid #f39c12;
-            backdrop-filter: blur(12px);
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .logo:hover { transform: scale(1.1) rotate(-5deg); }
-
-        .logo-icon {
-            width: 50px;
-            height: 50px;
-            background-color: #f39c12;
-            mask: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Goblin_icon.svg') center/contain no-repeat;
-            -webkit-mask: url('https://upload.wikimedia.org/wikipedia/commons/3/36/Goblin_icon.svg') center/contain no-repeat;
-            margin-right: 15px;
-            border-radius: 12px;
-            animation: bounce 3s infinite alternate;
-            box-shadow: 0 0 15px #f1c40f, 0 0 25px #9b59b6;
-        }
-
-        @keyframes bounce {
-            0% { transform: translateY(0); }
-            50% { transform: translateY(-15px); }
-            100% { transform: translateY(0); }
-        }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.8rem;
-            color: #f1c40f;
-            font-weight: 800;
-            text-shadow: 3px 3px 6px #9b59b6;
-        }
-
-        nav a {
-            color: #fff;
-            margin-left: 25px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: 0.3s;
-            position: relative;
-            text-transform: uppercase;
-        }
-
-        nav a::after {
-            content: '';
-            display: block;
-            height: 3px;
-            width: 0;
-            background: #f1c40f;
-            transition: 0.3s;
-            position: absolute;
-            bottom: -7px;
-            left: 0;
-            border-radius: 3px;
-        }
-
-        nav a:hover::after { width: 100%; }
-
-        .hero {
-            min-height: 90vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding-top: 100px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: 1s ease;
-            background: radial-gradient(circle at top, #9b59b6, #302b63);
-            box-shadow: inset 0 0 60px rgba(0,0,0,0.5);
-        }
-
-        .hero h2 {
-            font-size: 3rem;
-            color: #f1c40f;
-            text-shadow: 3px 3px 8px #9b59b6;
-            animation: fadeInUp 1.5s ease forwards;
-            opacity: 0;
-        }
-
-        .hero p {
-            font-size: 1.5rem;
-            color: #ecf0f1;
-            margin-top: 20px;
-            animation: fadeInUp 2s ease forwards;
-            opacity: 0;
-            text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-        }
-
-        @keyframes fadeInUp {
-            0% { opacity: 0; transform: translateY(50px); }
-            100% { opacity: 1; transform: translateY(0); }
-        }
-
-        .section {
-            padding: 80px 40px;
-            max-width: 1000px;
-            margin: auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: 1s ease;
-            background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(50,30,60,0.6));
-            border-radius: 25px;
-            margin-bottom: 40px;
-            box-shadow: 0 0 30px #f39c12, 0 0 50px #9b59b6;
-        }
-
-        .coming-soon h3 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-            color: #f39c12;
-            text-shadow: 2px 2px 5px #9b59b6;
-        }
-
-        .social-icons {
-            margin-top: 20px;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: 1s ease;
-            display: flex;
-            justify-content: center;
-        }
-
-        .social-icons a {
-            margin: 0 10px;
-            text-decoration: none;
-            color: #fff;
-            font-size: 2.2rem;
-            transition: 0.3s;
-            text-transform: uppercase;
-        }
-
-        .social-icons a:hover {
-            color: #f39c12;
-            transform: scale(1.4) rotate(-10deg);
-            text-shadow: 1px 1px 5px #f1c40f;
-        }
-
-        .language-selector {
-            margin-top: 30px;
-            color: #fff;
-            font-size: 1.1rem;
-            text-align: center;
-        }
-
-        .language-selector select {
-            padding: 7px 12px;
-            border-radius: 8px;
-            border: none;
-            background: rgba(0,0,0,0.8);
-            color: #fff;
-            font-weight: bold;
-            box-shadow: 0 0 10px #f39c12;
-        }
-
-        .language-selector select option {
-            background: #302b63;
-            color: #fff;
-        }
-
-        footer {
-            background: rgba(0,0,0,0.85);
-            text-align: center;
-            padding: 25px;
-            color: #fff;
-            border-top: 4px solid #f39c12;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: 1s ease;
-            text-shadow: 1px 1px 4px #9b59b6;
-        }
-    .logo-img {
-    width: 60px;
-    height: 60px;
-    border-radius: 12px;
-    transition: transform 0.4s ease, filter 0.4s;
-    filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Goblin Party</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Montserrat', sans-serif; color: #fff; overflow-x: hidden; background: radial-gradient(circle at center, #1a0f2c, #3a1f5c, #0f0c29); animation: backgroundShift 30s infinite alternate; }
+@keyframes backgroundShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; }
 }
-.logo-img:hover {
-    transform: scale(1.15) rotate(8deg);
-    filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6);
-}
+header { position: fixed; top:0; width:100%; z-index:100; display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background: rgba(0,0,0,0.8); backdrop-filter: blur(12px); border-bottom: 4px solid #f39c12; transition: transform 0.3s ease; box-shadow:0 0 20px rgba(0,0,0,0.7); }
+.logo { display:flex; align-items:center; cursor:pointer; transition: transform 0.3s; }
+.logo:hover { transform: scale(1.1) rotate(-5deg); }
+.logo-img { width:60px; height:60px; border-radius:12px; transition: transform 0.4s ease, filter 0.4s; filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6); }
+.logo-img:hover { transform: scale(1.15) rotate(8deg); filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6); }
+nav { display:flex; gap:25px; }
+nav a { color:#fff; text-decoration:none; font-weight:600; position:relative; text-transform:uppercase; transition:0.3s; }
+nav a::after { content:''; display:block; height:3px; width:0; background:#f1c40f; position:absolute; bottom:-7px; left:0; border-radius:3px; transition:0.3s; }
+nav a:hover::after { width:100%; }
+.hero { position: relative; min-height:100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; text-align:center; overflow:hidden; box-shadow: inset 0 0 60px rgba(0,0,0,0.5); }
+.hero video { position:absolute; top:50%; left:50%; width:100%; height:100%; object-fit:cover; transform: translate(-50%, -50%); z-index:-1; filter: brightness(0.6) contrast(1.2) saturate(1.5); }
+.hero h2 { font-size:3rem; color:#f1c40f; text-shadow:3px 3px 8px #9b59b6; margin-bottom:20px; animation: fadeInUp 1.5s ease forwards; opacity:0; }
+.hero p { font-size:1.5rem; color:#ecf0f1; margin-top:20px; text-shadow:1px 1px 3px rgba(0,0,0,0.5); animation: fadeInUp 2s ease forwards; opacity:0; }
+@keyframes fadeInUp { 0% { opacity:0; transform: translateY(50px); } 100% { opacity:1; transform: translateY(0); } }
+.section { padding:80px 40px; max-width:1000px; margin:auto; opacity:0; transform:translateY(50px); transition:1s ease; background: linear-gradient(135deg, rgba(0,0,0,0.7), rgba(50,30,60,0.6)); border-radius:25px; margin-bottom:40px; box-shadow:0 0 30px #f39c12, 0 0 50px #9b59b6; }
+.coming-soon h3 { font-size:2.2rem; margin-bottom:15px; color:#f39c12; text-shadow:2px 2px 5px #9b59b6; }
+.gallery { margin-top:40px; display:grid; grid-template-columns:repeat(auto-fit, minmax(150px,1fr)); gap:20px; }
+.gallery img { max-width:150px; width:100%; border-radius:15px; box-shadow:0 0 15px #9b59b6; }
+.social-icons-wrapper { text-align:center; margin-top:20px; }
+.follow-text { font-size:1.2rem; color:#f1c40f; margin-bottom:10px; text-shadow: 1px 1px 3px #9b59b6; }
+.social-icons { display:flex; justify-content:center; gap:20px; opacity:0; transform:translateY(50px); transition:1s ease; }
+.social-icons a { color:#fff; font-size:2.2rem; transition:0.3s; text-transform:uppercase; }
+.social-icons a:hover { color:#f39c12; transform: scale(1.4) rotate(-10deg); text-shadow:1px 1px 5px #f1c40f; }
+.language-selector { margin-top:30px; color:#fff; font-size:1.1rem; text-align:center; }
+.language-selector select { padding:7px 12px; border-radius:8px; border:none; background: rgba(0,0,0,0.8); color:#fff; font-weight:bold; box-shadow:0 0 10px #f39c12; }
+.language-selector select option { background:#302b63; color:#fff; }
+footer { background: rgba(0,0,0,0.85); text-align:center; padding:25px; color:#fff; border-top:4px solid #f39c12; opacity:0; transform:translateY(50px); transition:1s ease; text-shadow:1px 1px 4px #9b59b6; }
 </style>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="logo" onclick="window.location.href='#inicio'">
-            <img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img">
+
+<header>
+    <div class="logo" onclick="window.location.href='#inicio'"><img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img"></div>
+    <nav>
+        <a href="#projects" data-lang-en="Games" data-lang-es="Juegos">Games</a>
+        <a href="indexNews.html" data-lang-en="News" data-lang-es="Noticias">News</a>
+        <a href="#contact" data-lang-en="Contact" data-lang-es="Contacto">Contact</a>
+        <a href="#about" data-lang-en="About" data-lang-es="Sobre Nosotros">About</a>
+    </nav>
+</header>
+
+<section class="hero" id="inicio">
+    <video autoplay muted loop>
+        <source src="assets/video/hero.mp4" type="video/mp4">
+    </video>
+    <h2>Coming Soon: Bone Path!</h2>
+    <p>We are hard at work creating an immersive adventure. Stay tuned for updates!</p>
+</section>
+
+<section class="section" id="projects">
+    <h2>Our Projects</h2>
+    <div class="coming-soon">
+        <h3>Bone Path</h3>
+        <div class="gallery">
+            <img src="assets/images/BonePathLogo.png" alt="Bone Path Logo">
         </div>
-            
-        </div>
-        <nav>
-            <a href="#projects" data-lang-en="Games" data-lang-es="Juegos" data-lang-pt="Jogos" data-lang-fr="Jeux" data-lang-de="Spiele" data-lang-it="Giochi">Games</a>
-            <a href="#news" data-lang-en="News" data-lang-es="Noticias" data-lang-pt="Notícias" data-lang-fr="Actualités" data-lang-de="Nachrichten" data-lang-it="Notizie">News</a>
-            <a href="#contact" data-lang-en="Contact" data-lang-es="Contacto" data-lang-pt="Contato" data-lang-fr="Contact" data-lang-de="Kontakt" data-lang-it="Contatto">Contact</a>
-            <a href="#about" data-lang-en="About" data-lang-es="Sobre Nosotros" data-lang-pt="Sobre Nós" data-lang-fr="À propos" data-lang-de="Über uns" data-lang-it="Chi Siamo">About</a>
-        </nav>
-    </header>
-
-    <section class="hero" id="inicio">
-        <h2 data-lang-en="Coming Soon: Bone Path!" data-lang-es="Próximamente: Bone Path!" data-lang-pt="Em Breve: Bone Path!" data-lang-fr="Bientôt: Bone Path!" data-lang-de="Demnächst: Bone Path!" data-lang-it="Prossimamente: Bone Path!">Coming Soon: Bone Path!</h2>
-        <p data-lang-en="We are hard at work creating an immersive adventure. Stay tuned for updates!" data-lang-es="Estamos trabajando duro en una aventura inmersiva. ¡Mantente atento a las actualizaciones!" data-lang-pt="Estamos trabalhando duro em uma aventura imersiva. Fique atento às atualizações!" data-lang-fr="Nous travaillons dur sur une aventure immersive. Restez à l'écoute pour les mises à jour !" data-lang-de="Wir arbeiten hart an einem immersiven Abenteuer. Bleiben Sie dran für Updates!" data-lang-it="Stiamo lavorando duramente a un'avventura immersiva. Rimanete sintonizzati per gli aggiornamenti!">We are hard at work creating an immersive adventure. Stay tuned for updates!</p>
-    </section>
-
-    <section class="section" id="projects">
-        <h2 data-lang-en="Our Projects" data-lang-es="Nuestros Proyectos" data-lang-pt="Nossos Projetos" data-lang-fr="Nos Projets" data-lang-de="Unsere Projekte" data-lang-it="I Nostri Progetti">Our Projects</h2>
-        <div class="coming-soon">
-            <h3 data-lang-en="Bone Path" data-lang-es="Bone Path" data-lang-pt="Bone Path" data-lang-fr="Bone Path" data-lang-de="Bone Path" data-lang-it="Bone Path">Bone Path</h3>
-            <!-- Image Gallery Added -->
-    <div class="gallery" style="margin-top:40px; display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
-       <img src="assets/images/BonePathLogo.png" 
-     alt="Bone Path Logo" 
-     style="max-width:200px; width:100%; border-radius:15px; box-shadow:0 0 15px #9b59b6;">
-
-
+        <p>Exciting new gameplay and adventures await. Launching soon!</p>
     </div>
-            <p data-lang-en="Exciting new gameplay and adventures await. Launching soon!" data-lang-es="Nuevas y emocionantes aventuras te esperan. ¡Próximamente!" data-lang-pt="Novos e emocionantes jogos aguardam. Lançamento em breve!" data-lang-fr="De nouvelles aventures passionnantes vous attendent. Bientôt disponible !" data-lang-de="Spannendes neues Gameplay erwartet Sie. Bald verfügbar!" data-lang-it="Nuove ed entusiasmanti avventure ti aspettano. In arrivo presto!">Exciting new gameplay and adventures await. Launching soon!</p>
-        </div>
-
 </section>
 
 <section class="section" id="about">
-        <h2 data-lang-en="About Us" data-lang-es="Sobre Nosotros" data-lang-pt="Sobre Nós" data-lang-fr="À propos de nous" data-lang-de="Über uns" data-lang-it="Chi Siamo">About Us</h2>
-        <p data-lang-en="Goblin Party is a group of passionate young developers who started learning video game development together. We created our first Metroidvania game, Bone Path, and we are determined to keep pushing boundaries and bring even more exciting games in the future." data-lang-es="Goblin Party es un grupo de jóvenes apasionados que comenzaron a aprender desarrollo de videojuegos juntos. Creamos nuestro primer juego Metroidvania, Bone Path, y estamos decididos a seguir rompiendo límites y traer juegos aún más emocionantes en el futuro." data-lang-pt="Goblin Party é um grupo de jovens apaixonados que começaram a aprender desenvolvimento de jogos juntos. Criamos nosso primeiro jogo Metroidvania, Bone Path, e estamos determinados a continuar quebrando limites e trazer jogos ainda mais emocionantes no futuro." data-lang-fr="Goblin Party est un groupe de jeunes passionnés qui ont commencé à apprendre le développement de jeux vidéo ensemble. Nous avons créé notre premier jeu Metroidvania, Bone Path, et nous sommes déterminés à continuer à repousser les limites et à proposer encore plus de jeux passionnants à l'avenir." data-lang-de="Goblin Party ist eine Gruppe leidenschaftlicher junger Entwickler, die gemeinsam mit der Spieleentwicklung begonnen haben. Wir haben unser erstes Metroidvania-Spiel Bone Path erstellt und sind entschlossen, weiterhin Grenzen zu überschreiten und noch spannendere Spiele zu bringen." data-lang-it="Goblin Party è un gruppo di giovani appassionati che ha iniziato a imparare lo sviluppo di videogiochi insieme. Abbiamo creato il nostro primo gioco Metroidvania, Bone Path, e siamo determinati a continuare a superare i limiti e portare giochi ancora più entusiasmanti in futuro.">Goblin Party is a group of passionate young developers who started learning video game development together. We created our first Metroidvania game, <strong>Bone Path</strong>, and we are determined to keep pushing boundaries and bring even more exciting games in the future.</p>
-    </section>
+    <h2>About Us</h2>
+    <p>Goblin Party is a group of passionate young developers who started learning video game development together. We created our first Metroidvania game, <strong>Bone Path</strong>, and we are determined to keep pushing boundaries and bring even more exciting games in the future.</p>
+</section>
 
-    <section class="section" id="contact">
-        <h2 data-lang-en="Contact" data-lang-es="Contacto" data-lang-pt="Contato" data-lang-fr="Contact" data-lang-de="Kontakt" data-lang-it="Contatto">Contact</h2>
-        <p>Email: goblinparty.official@gmail.com</p>
+<section class="section" id="contact">
+    <h2>Contact</h2>
+    <p>Email: goblinparty.official@gmail.com</p>
+    <div class="social-icons-wrapper">
+        <div class="follow-text">Follow us on:</div>
         <div class="social-icons">
             <a href="https://www.youtube.com/@GoblinPartyOfficial" target="_blank"><i class="fab fa-youtube"></i></a>
             <a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
-        <div class="language-selector">
-            <label for="language">Language: </label>
-            <select id="language">
-                <option value="en">English</option>
-                <option value="es">Español</option>
-                <option value="pt">Português</option>
-                <option value="fr">Français</option>
-                <option value="de">Deutsch</option>
-                <option value="it">Italiano</option>
-            </select>
-        </div>
-    </section>
+    </div>
+    <div class="language-selector">
+        <label for="language">Language: </label>
+        <select id="language">
+            <option value="en">English</option>
+            <option value="es">Español</option>
+        </select>
+    </div>
+</section>
 
-    <footer>
-        <p>© 2025 Goblin Party</p>
-    </footer>
+<footer>
+    <p>© 2025 Goblin Party</p>
+</footer>
 
-    <script>
-        const observer = new IntersectionObserver(entries => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.opacity = 1;
-                    entry.target.style.transform = 'translateY(0)';
-                }
-            });
-        }, { threshold: 0.2 });
+<script>
+const observer = new IntersectionObserver(entries => { entries.forEach(entry => { if(entry.isIntersecting){ entry.target.style.opacity = 1; entry.target.style.transform = 'translateY(0)'; } }); }, { threshold: 0.2 });
+document.querySelectorAll('.hero, .section, .coming-soon, .social-icons, footer').forEach(el => observer.observe(el));
+let lastScrollTop = 0; const header = document.querySelector('header');
+window.addEventListener('scroll', () => { const scrollTop = window.pageYOffset || document.documentElement.scrollTop; if(scrollTop > lastScrollTop && scrollTop > 100){ header.style.transform='translateY(-120px)'; } else { header.style.transform='translateY(0)'; } lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; });
+const languageSelect = document.getElementById('language');
+languageSelect.addEventListener('change', () => { const lang = languageSelect.value; document.querySelectorAll('[data-lang-en]').forEach(el => { el.textContent = el.dataset[`lang${lang.charAt(0).toUpperCase()+lang.slice(1)}`]; }); });
+</script>
 
-        document.querySelectorAll('.hero, .section, .coming-soon, .social-icons, footer').forEach(el => {
-            observer.observe(el);
-        });
-
-        const languageSelect = document.getElementById('language');
-        languageSelect.addEventListener('change', () => {
-            const lang = languageSelect.value;
-            document.querySelectorAll('[data-lang-en]').forEach(el => {
-                el.textContent = el.dataset[`lang${lang.charAt(0).toUpperCase() + lang.slice(1)}`];
-            });
-        });
-    </script>
 </body>
 </html>
