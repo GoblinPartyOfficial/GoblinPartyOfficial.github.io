@@ -207,15 +207,27 @@
             transition: 1s ease;
             text-shadow: 1px 1px 4px #9b59b6;
         }
-    </style>
+    .logo-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 12px;
+    transition: transform 0.4s ease, filter 0.4s;
+    filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
+}
+.logo-img:hover {
+    transform: scale(1.15) rotate(8deg);
+    filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6);
+}
+</style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
     <header>
         <div class="logo" onclick="window.location.href='#inicio'">
-            <div class="logo-icon"></div>
-            <h1>Goblin Party</h1>
+            <img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img">
+        </div>
+            
         </div>
         <nav>
             <a href="#projects" data-lang-en="Games" data-lang-es="Juegos" data-lang-pt="Jogos" data-lang-fr="Jeux" data-lang-de="Spiele" data-lang-it="Giochi">Games</a>
@@ -234,11 +246,20 @@
         <h2 data-lang-en="Our Projects" data-lang-es="Nuestros Proyectos" data-lang-pt="Nossos Projetos" data-lang-fr="Nos Projets" data-lang-de="Unsere Projekte" data-lang-it="I Nostri Progetti">Our Projects</h2>
         <div class="coming-soon">
             <h3 data-lang-en="Bone Path" data-lang-es="Bone Path" data-lang-pt="Bone Path" data-lang-fr="Bone Path" data-lang-de="Bone Path" data-lang-it="Bone Path">Bone Path</h3>
+            <!-- Image Gallery Added -->
+    <div class="gallery" style="margin-top:40px; display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px;">
+       <img src="assets/images/BonePathLogo.png" 
+     alt="Bone Path Logo" 
+     style="max-width:200px; width:100%; border-radius:15px; box-shadow:0 0 15px #9b59b6;">
+
+
+    </div>
             <p data-lang-en="Exciting new gameplay and adventures await. Launching soon!" data-lang-es="Nuevas y emocionantes aventuras te esperan. ¡Próximamente!" data-lang-pt="Novos e emocionantes jogos aguardam. Lançamento em breve!" data-lang-fr="De nouvelles aventures passionnantes vous attendent. Bientôt disponible !" data-lang-de="Spannendes neues Gameplay erwartet Sie. Bald verfügbar!" data-lang-it="Nuove ed entusiasmanti avventure ti aspettano. In arrivo presto!">Exciting new gameplay and adventures await. Launching soon!</p>
         </div>
-    </section>
 
-    <section class="section" id="about">
+</section>
+
+<section class="section" id="about">
         <h2 data-lang-en="About Us" data-lang-es="Sobre Nosotros" data-lang-pt="Sobre Nós" data-lang-fr="À propos de nous" data-lang-de="Über uns" data-lang-it="Chi Siamo">About Us</h2>
         <p data-lang-en="Goblin Party is a group of passionate young developers who started learning video game development together. We created our first Metroidvania game, Bone Path, and we are determined to keep pushing boundaries and bring even more exciting games in the future." data-lang-es="Goblin Party es un grupo de jóvenes apasionados que comenzaron a aprender desarrollo de videojuegos juntos. Creamos nuestro primer juego Metroidvania, Bone Path, y estamos decididos a seguir rompiendo límites y traer juegos aún más emocionantes en el futuro." data-lang-pt="Goblin Party é um grupo de jovens apaixonados que começaram a aprender desenvolvimento de jogos juntos. Criamos nosso primeiro jogo Metroidvania, Bone Path, e estamos determinados a continuar quebrando limites e trazer jogos ainda mais emocionantes no futuro." data-lang-fr="Goblin Party est un groupe de jeunes passionnés qui ont commencé à apprendre le développement de jeux vidéo ensemble. Nous avons créé notre premier jeu Metroidvania, Bone Path, et nous sommes déterminés à continuer à repousser les limites et à proposer encore plus de jeux passionnants à l'avenir." data-lang-de="Goblin Party ist eine Gruppe leidenschaftlicher junger Entwickler, die gemeinsam mit der Spieleentwicklung begonnen haben. Wir haben unser erstes Metroidvania-Spiel Bone Path erstellt und sind entschlossen, weiterhin Grenzen zu überschreiten und noch spannendere Spiele zu bringen." data-lang-it="Goblin Party è un gruppo di giovani appassionati che ha iniziato a imparare lo sviluppo di videogiochi insieme. Abbiamo creato il nostro primo gioco Metroidvania, Bone Path, e siamo determinati a continuare a superare i limiti e portare giochi ancora più entusiasmanti in futuro.">Goblin Party is a group of passionate young developers who started learning video game development together. We created our first Metroidvania game, <strong>Bone Path</strong>, and we are determined to keep pushing boundaries and bring even more exciting games in the future.</p>
     </section>
