@@ -420,9 +420,6 @@
     </header>
 
     <section class="hero" id="inicio">
-        <video autoplay muted loop>
-            <source src="assets/video/hero.mp4" type="video/mp4">
-        </video>
         <h2 class="blur-text">Coming Soon: Bone Path!</h2>
         <p class="blur-text">We are hard at work creating an immersive adventure. Stay tuned for updates!</p>
 
@@ -434,6 +431,21 @@
         </div>
 
         <style>
+
+            .hero {
+                position: relative;
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                overflow: hidden;
+                background: url('assets/images/Fondo1.webp') no-repeat center center/cover;
+                background-blend-mode: multiply;
+                background-color: rgba(0,0,0,0.5);
+            }
+
             .social-vertical {
                 position: fixed;
                 top: 50%;
