@@ -434,10 +434,20 @@
                     transform: rotate(-45deg) translate(6px, -6px);
                 }
 
-            /* Móvil: ocultar nav por defecto */
             @media(max-width: 800px) {
+                header {
+                    flex-direction: row; /* fila horizontal */
+                    justify-content: space-between; /* logo izquierda, hamburger derecha */
+                    align-items: center;
+                    padding: 15px 20px;
+                }
+
+                .hamburger {
+                    display: flex; /* mostrar el hamburger */
+                }
+
                 nav {
-                    display: none;
+                    display: none; /* por defecto oculto */
                     position: absolute;
                     top: 70px;
                     right: 20px;
@@ -454,16 +464,8 @@
                     nav.show {
                         display: flex;
                     }
-
-                .hamburger {
-                    display: flex;
-                }
-
-                header {
-                    justify-content: space-between;
-                    padding: 15px 20px;
-                }
             }
+
 
             /* Desktop: mantener menú normal */
             @media(min-width: 801px) {
