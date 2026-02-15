@@ -657,6 +657,10 @@
     <section class="hero" id="inicio">
         <a href="#" class="glass-button" onclick="event.preventDefault()">Coming soon</a>
 
+        <div class="hero-image-mobile">
+            <img src="assets/images/Fondo1.webp" alt="Goblin Party Hero Image">
+        </div>
+
         <!-- Social vertical fija -->
         <div class="social-vertical">
             <a href="https://www.youtube.com/@GoblinPartyOfficial" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -665,6 +669,40 @@
     </section>
 
     <style>
+
+        /* Imagen hero móvil */
+        .hero-image-mobile {
+            display: none; /* Oculto por defecto para desktop */
+            width: 100%;
+            max-width: 600px;
+            margin: 30px auto 0;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 25px #9b59b6, 0 0 35px #f39c12;
+        }
+
+            .hero-image-mobile img {
+                width: 100%;
+                display: block;
+            }
+
+        /* Solo para móviles */
+        @media(max-width: 799px) {
+            /* Ocultar el fondo de hero por defecto en móvil */
+            .hero {
+                background: none;
+            }
+
+            .hero-image-mobile {
+                display: block;
+            }
+
+            .glass-button {
+                margin-top: 50px; /* Separación del header */
+            }
+        }
+
+
         @media(min-width: 1025px) {
             .hero {
                 display: flex;
