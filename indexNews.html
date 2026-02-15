@@ -452,12 +452,10 @@
     <header>
         <!-- Logo -->
         <div class="logo">
-            <a href="index.html">
-                <img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img">
-            </a>
+            <a href="index.html"><img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img"></a>
         </div>
 
-        <!-- Hamburger para móvil -->
+        <!-- Hamburger -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -477,6 +475,119 @@
             <a href="index.html#about">About</a>
         </nav>
     </header>
+
+    <style>
+        /* Hamburger Styles */
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 30px;
+            height: 22px;
+            cursor: pointer;
+            z-index: 110;
+        }
+
+            .hamburger span {
+                display: block;
+                height: 4px;
+                background: #fff;
+                border-radius: 2px;
+                transition: all 0.3s ease;
+            }
+
+            .hamburger.active span:nth-child(1) {
+                transform: rotate(45deg) translate(5px, 5px);
+            }
+
+            .hamburger.active span:nth-child(2) {
+                opacity: 0;
+            }
+
+            .hamburger.active span:nth-child(3) {
+                transform: rotate(-45deg) translate(6px, -6px);
+            }
+
+        /* Mobile Nav */
+        @media(max-width: 800px) {
+            header {
+                flex-direction: column;
+                align-items: center;
+                padding: 15px 20px;
+            }
+
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 20px;
+                background: rgba(0,0,0,0.95);
+                flex-direction: column;
+                width: 200px;
+                padding: 20px;
+                border-radius: 12px;
+                gap: 15px;
+                box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+                z-index: 105;
+            }
+
+                nav.show {
+                    display: flex;
+                }
+
+                nav .dropdown-content {
+                    position: relative;
+                    top: 0;
+                    left: 0;
+                    background: none;
+                    padding: 0;
+                }
+
+                    nav .dropdown-content a {
+                        padding-left: 10px;
+                    }
+        }
+
+        @media(min-width: 801px) {
+            .hamburger {
+                display: none;
+            }
+        }
+    </style>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const mobileNav = document.getElementById('mobileNav');
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        });
+
+        // Dropdown en móvil
+        const dropdowns = mobileNav.querySelectorAll('.dropdown');
+        dropdowns.forEach(drop => {
+            const btn = drop.querySelector('.dropbtn');
+            btn.addEventListener('click', (e) => {
+                e.preventDefault();
+                drop.classList.toggle('active');
+            });
+        });
+
+        // Cerrar menu si clic fuera
+        document.addEventListener('click', (e) => {
+            if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+                mobileNav.classList.remove('show');
+                dropdowns.forEach(d => d.classList.remove('active'));
+                hamburger.classList.remove('active');
+            }
+        });
+    </script>
+
 
 
     <!-- NEWS SECTION -->
