@@ -436,18 +436,18 @@
 
             @media(max-width: 800px) {
                 header {
-                    flex-direction: row; /* fila horizontal */
-                    justify-content: space-between; /* logo izquierda, hamburger derecha */
+                    flex-direction: row;
+                    justify-content: space-between;
                     align-items: center;
                     padding: 15px 20px;
                 }
 
                 .hamburger {
-                    display: flex; /* mostrar el hamburger */
+                    display: flex;
                 }
 
                 nav {
-                    display: none; /* por defecto oculto */
+                    display: none;
                     position: absolute;
                     top: 70px;
                     right: 20px;
@@ -576,22 +576,24 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: flex-start; /* alineación en escritorio */
+        align-items: flex-start; /* escritorio: contenido a la izquierda */
         text-align: left;
         overflow: hidden;
-        padding-left: 360px; /* solo para escritorio */
+        padding-left: 360px; /* solo en escritorio */
         background: url('assets/images/Fondo1.webp') no-repeat center center/cover;
     }
 
     /* Ajustes para móviles */
     @media(max-width: 800px) {
         .hero {
-            align-items: center;
+            align-items: center; /* centrar contenido en móvil */
             text-align: center;
-            padding-left: 0; 
-            padding: 50px 15px; 
-            background-size: cover; 
-            background-position: center top;
+            padding-left: 0;
+            padding-right: 0;
+            padding-top: 50px;
+            padding-bottom: 50px;
+            background-size: cover; /* asegurar que el fondo se cubra */
+            background-position: center top; /* mantener la parte superior visible */
         }
 
             .hero h2 {
@@ -608,6 +610,7 @@
             margin-top: 30px;
         }
     }
+
 
     .glass-button {
         margin-top: 0;
