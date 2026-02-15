@@ -270,7 +270,6 @@
             gap: 20px;
         }
 
-
         .footer-left .footer-logo {
             width: 80px;
             height: 80px;
@@ -278,9 +277,27 @@
             animation: neonGlow 1.5s infinite alternate;
         }
 
+        @keyframes neonGlow {
+            0% {
+                filter: drop-shadow(0 0 10px #f1c40f) drop-shadow(0 0 20px #9b59b6);
+                transform: scale(1);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6);
+                transform: scale(1.05) rotate(2deg);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
+                transform: scale(1);
+            }
+        }
+
         .footer-center {
             text-align: center;
         }
+
             .footer-center .follow-text {
                 font-weight: 700;
                 color: #f1c40f;
@@ -307,6 +324,80 @@
                         transform: scale(1.3) rotate(-10deg);
                         text-shadow: 1px 1px 6px #f1c40f;
                     }
+
+        @keyframes neonIcons {
+            0% {
+                text-shadow: 0 0 5px #f1c40f,0 0 10px #9b59b6;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #f39c12,0 0 35px #9b59b6;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #f1c40f,0 0 20px #9b59b6;
+            }
+        }
+
+        .footer-divider {
+            border: 0;
+            height: 2px;
+            background: #f39c12;
+            margin: 20px 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #ccc;
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        /* Dropdown dentro del footer */
+        .footer-right .dropdown {
+            position: relative;
+        }
+
+        .footer-right .dropdown-content {
+            display: none;
+            position: absolute;
+            top: 120%;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+            background: linear-gradient(135deg, rgba(243,156,18,0.9), rgba(155,89,182,0.9));
+            padding: 10px 0;
+            border-radius: 12px;
+            min-width: 150px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+            z-index: 1000;
+            opacity: 0;
+            transition: all 0.4s ease;
+        }
+
+            .footer-right .dropdown-content a {
+                color: #fff;
+                padding: 10px 15px;
+                text-decoration: none;
+                display: block;
+                font-weight: 500;
+                transition: 0.3s;
+            }
+
+                .footer-right .dropdown-content a:hover {
+                    background-color: rgba(255,255,255,0.2);
+                    color: #f1c40f;
+                    transform: scale(1.05);
+                    border-radius: 8px;
+                }
+
+        .footer-right .dropdown.active .dropdown-content {
+            display: block;
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
 
         .dropdown {
             position: relative; 
@@ -428,28 +519,28 @@
 <body>
 
     <header>
-            <div class="logo" onclick="window.location.href='#inicio'">
-                <img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img">
-            </div>
+        <div class="logo" onclick="window.location.href='#inicio'">
+            <img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img">
+        </div>
 
-            <!-- Hamburger para móvil -->
-            <div class="hamburger" id="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
+        <!-- Hamburger para móvil -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
 
-            <nav id="mobileNav">
-                <div class="dropdown">
-                    <a href="index.html#projects" class="dropbtn">Games <i class="fa-solid fa-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="index.html#projects">Bone Path</a>
-                    </div>
+        <nav id="mobileNav">
+            <div class="dropdown">
+                <a href="index.html#projects" class="dropbtn">Games <i class="fa-solid fa-caret-down"></i></a>
+                <div class="dropdown-content">
+                    <a href="index.html#projects">Bone Path</a>
                 </div>
-                <a href="indexNews.html">News</a>
-                <a href="index.html#contact">Contact</a>
-                <a href="index.html#about">About</a>
-            </nav>
+            </div>
+            <a href="indexNews.html">News</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#about">About</a>
+        </nav>
 
         <style>
             .hamburger {
@@ -570,7 +661,7 @@
                 justify-content: center;
                 align-items: flex-start;
                 text-align: left;
-                padding-left: 360px; 
+                padding-left: 360px;
                 padding-top: 0;
                 padding-bottom: 0;
                 min-height: 100vh;
@@ -701,496 +792,496 @@
 
 
 
-<section class="section" id="projects">
-    <h2>Our Projects</h2>
+    <section class="section" id="projects">
+        <h2>Our Projects</h2>
 
-    <div class="project-container">
-        <div class="project-logo">
-            <img src="assets/images/BonePathLogo.webp" alt="Bone Path Logo">
+        <div class="project-container">
+            <div class="project-logo">
+                <img src="assets/images/BonePathLogo.webp" alt="Bone Path Logo">
+            </div>
+            <div class="project-info">
+                <h3>Bone Path</h3>
+                <p>
+                    Bone Path is our first Metroidvania game, designed to immerse players in a dark fantasy world full of secrets and challenges.
+                    Explore dungeons, solve puzzles, and defeat epic bosses in a rich story-driven adventure.
+                </p>
+                <p><strong>Launch Date:</strong> Coming Soon!</p>
+                <p><strong>Platform:</strong> PC</p>
+            </div>
         </div>
-        <div class="project-info">
-            <h3>Bone Path</h3>
-            <p>
-                Bone Path is our first Metroidvania game, designed to immerse players in a dark fantasy world full of secrets and challenges.
-                Explore dungeons, solve puzzles, and defeat epic bosses in a rich story-driven adventure.
-            </p>
-            <p><strong>Launch Date:</strong> Coming Soon!</p>
-            <p><strong>Platform:</strong> PC</p>
-        </div>
-    </div>
 
-</section>
+    </section>
 
 
-<style>
-    .project-container {
-        display: flex;
-        align-items: center;
-        gap: 40px;
-        margin-top: 50px;
-        background: rgba(0,0,0,0.4);
-        padding: 30px;
-        border-radius: 16px;
-        box-shadow: 0 0 25px #9b59b6;
-        transition: transform 0.3s ease;
-    }
-
-        .project-container:hover {
-            transform: scale(1.02);
-        }
-
-    .project-logo img {
-        width: 250px;
-        height: 250px;
-        border-radius: 20px;
-        border: 4px solid #f39c12;
-        box-shadow: 0 0 35px #9b59b6, 0 0 50px #f39c12;
-        transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-        .project-logo img:hover {
-            transform: scale(1.1) rotate(3deg);
-            filter: drop-shadow(0 0 50px #f39c12) drop-shadow(0 0 60px #9b59b6);
-        }
-
-    .project-info {
-        flex: 1;
-        text-align: left;
-    }
-
-        .project-info h3 {
-            font-size: 2rem;
-            color: #f1c40f;
-            margin-bottom: 15px;
-            text-shadow: 2px 2px 6px #9b59b6;
-        }
-
-        .project-info p {
-            font-size: 1.1rem;
-            color: #ecf0f1;
-            line-height: 1.6;
-            margin-bottom: 10px;
-            text-shadow: 1px 1px 4px #9b59b6;
-        }
-
-    @media(max-width: 900px) {
+    <style>
         .project-container {
-            flex-direction: column;
-            text-align: center;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 50px;
+            background: rgba(0,0,0,0.4);
+            padding: 30px;
+            border-radius: 16px;
+            box-shadow: 0 0 25px #9b59b6;
+            transition: transform 0.3s ease;
         }
+
+            .project-container:hover {
+                transform: scale(1.02);
+            }
 
         .project-logo img {
-            width: 200px;
-            height: 200px;
-        }
-
-        .project-info {
-            margin-top: 20px;
-        }
-    }
-</style>
-
-
-<section class="section" id="about">
-    <!-- Logo encima del título -->
-    <div class="about-logo">
-        <img src="assets/images/logo.png" alt="Goblin Party Logo">
-    </div>
-
-    <h2> About Us</h2>
-    <p> Goblin Party is a group of passionate young developers who started learning video game development together. We created our first Metroidvania game, <strong> Bone Path</strong>, and we are determined to keep pushing boundaries and bring even more exciting games in the future.</p>
-    <!-- Cocreadores en columnas -->
-    <div class="team-grid">
-        <div class="team-member">
-            <img src="assets/images/SinFoto.webp" alt="Member 1">
-            <h3>David Gómez</h3>
-            <p>Game Designer</p>
-            <p class="description">David is a Co-director of Goblin Party.</p>
-        </div>
-        <div class="team-member">
-            <img src="assets/images/SinFoto.webp" alt="Member 2">
-            <h3>Alejandro Cruz</h3>
-            <p>Animator</p>
-            <p class="description">Alejandro is a Co-director of Goblin Party.</p>
-        </div>
-        <div class="team-member">
-            <img src="assets/images/SinFoto.webp" alt="Member 3">
-            <h3>Marcos Isar</h3>
-            <p>Programmer</p>
-            <p class="description">Marcos is a Co-director of Goblin Party.</p>
-        </div>
-        <div class="team-member">
-            <img src="assets/images/SinFoto.webp" alt="Member 4">
-            <h3>Lucas Vaquerizas</h3>
-            <p>Artist</p>
-            <p class="description">Lucas is a Co-director of Goblin Party.</p>
-        </div>
-    </div>
-</section>
-
-<style>
-    .about-logo {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 30px;
-    }
-
-        .about-logo img {
-            width: 120px;
-            height: 120px;
-            border-radius: 16px;
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
             border: 4px solid #f39c12;
-            box-shadow: 0 0 25px #9b59b6, 0 0 40px #f39c12;
-            animation: logoGlow 1.5s infinite alternate;
+            box-shadow: 0 0 35px #9b59b6, 0 0 50px #f39c12;
             transition: transform 0.3s ease, filter 0.3s ease;
         }
 
-            .about-logo img:hover {
-                transform: scale(1.15) rotate(5deg);
-                filter: drop-shadow(0 0 40px #f39c12) drop-shadow(0 0 50px #9b59b6);
+            .project-logo img:hover {
+                transform: scale(1.1) rotate(3deg);
+                filter: drop-shadow(0 0 50px #f39c12) drop-shadow(0 0 60px #9b59b6);
             }
 
-    @keyframes logoGlow {
-        0% {
-            filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
-        }
-
-        50% {
-            filter: drop-shadow(0 0 35px #f39c12) drop-shadow(0 0 50px #9b59b6);
-        }
-
-        100% {
-            filter: drop-shadow(0 0 20px #f1c40f) drop-shadow(0 0 35px #9b59b6);
-        }
-    }
-
-    .team-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-        gap: 40px;
-        margin-top: 50px;
-        text-align: center;
-    }
-
-    .team-member img {
-        width: 140px;
-        height: 140px;
-        border-radius: 50%;
-        border: 3px solid #f39c12;
-        box-shadow: 0 0 20px #9b59b6, 0 0 35px #f39c12;
-        transition: transform 0.3s ease, filter 0.3s ease;
-    }
-
-        .team-member img:hover {
-            transform: scale(1.1) rotate(5deg);
-            filter: drop-shadow(0 0 30px #f39c12);
-        }
-
-    .team-member h3 {
-        margin-top: 15px;
-        font-size: 1.3rem;
-        color: #f1c40f;
-        text-shadow: 2px 2px 6px #9b59b6;
-    }
-
-    .team-member p {
-        font-size: 1rem;
-        color: #ecf0f1;
-        margin-top: 5px;
-        text-shadow: 1px 1px 4px #9b59b6;
-    }
-</style>
-
-
-
-<section class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Send us a message and we’ll get back to you as soon as possible!</p>
-
-    <form id="contact-form">
-        <div class="form-row">
-            <input type="text" name="user_name" placeholder="Your Name*" required>
-            <input type="email" name="user_email" placeholder="Your Email*" required>
-        </div>
-        <textarea name="message" rows="6" placeholder="Your Message*" required></textarea>
-        <button type="submit">Send Message</button>
-        <p id="form-status"></p>
-    </form>
-</section>
-
-<!-- --- EMAILJS SCRIPT --- -->
-<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-<script>
-    emailjs.init("RKFYGApd6ZAyDYDoB");
-
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-
-    contactForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-
-        emailjs.sendForm('service_bs9yxfc', 'template_tubvg22', this)
-            .then(() => {
-                formStatus.textContent = "Message sent successfully!";
-                contactForm.reset();
-            }, (error) => {
-                formStatus.textContent = "Oops! Something went wrong.";
-                console.error(error);
-            });
-    });
-</script>
-
-
-<style>
-    #contact-form {
-        max-width: 600px;
-        margin: 30px auto 0;
-        display: flex;
-        flex-direction: column;
-        gap: 15px;
-    }
-
-    .form-row {
-        display: flex;
-        gap: 15px;
-    }
-
-        .form-row input {
+        .project-info {
             flex: 1;
+            text-align: left;
+        }
+
+            .project-info h3 {
+                font-size: 2rem;
+                color: #f1c40f;
+                margin-bottom: 15px;
+                text-shadow: 2px 2px 6px #9b59b6;
+            }
+
+            .project-info p {
+                font-size: 1.1rem;
+                color: #ecf0f1;
+                line-height: 1.6;
+                margin-bottom: 10px;
+                text-shadow: 1px 1px 4px #9b59b6;
+            }
+
+        @media(max-width: 900px) {
+            .project-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .project-logo img {
+                width: 200px;
+                height: 200px;
+            }
+
+            .project-info {
+                margin-top: 20px;
+            }
+        }
+    </style>
+
+
+    <section class="section" id="about">
+        <!-- Logo encima del título -->
+        <div class="about-logo">
+            <img src="assets/images/logo.png" alt="Goblin Party Logo">
+        </div>
+
+        <h2> About Us</h2>
+        <p> Goblin Party is a group of passionate young developers who started learning video game development together. We created our first Metroidvania game, <strong> Bone Path</strong>, and we are determined to keep pushing boundaries and bring even more exciting games in the future.</p>
+        <!-- Cocreadores en columnas -->
+        <div class="team-grid">
+            <div class="team-member">
+                <img src="assets/images/SinFoto.webp" alt="Member 1">
+                <h3>David Gómez</h3>
+                <p>Game Designer</p>
+                <p class="description">David is a Co-director of Goblin Party.</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/images/SinFoto.webp" alt="Member 2">
+                <h3>Alejandro Cruz</h3>
+                <p>Animator</p>
+                <p class="description">Alejandro is a Co-director of Goblin Party.</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/images/SinFoto.webp" alt="Member 3">
+                <h3>Marcos Isar</h3>
+                <p>Programmer</p>
+                <p class="description">Marcos is a Co-director of Goblin Party.</p>
+            </div>
+            <div class="team-member">
+                <img src="assets/images/SinFoto.webp" alt="Member 4">
+                <h3>Lucas Vaquerizas</h3>
+                <p>Artist</p>
+                <p class="description">Lucas is a Co-director of Goblin Party.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .about-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+            .about-logo img {
+                width: 120px;
+                height: 120px;
+                border-radius: 16px;
+                border: 4px solid #f39c12;
+                box-shadow: 0 0 25px #9b59b6, 0 0 40px #f39c12;
+                animation: logoGlow 1.5s infinite alternate;
+                transition: transform 0.3s ease, filter 0.3s ease;
+            }
+
+                .about-logo img:hover {
+                    transform: scale(1.15) rotate(5deg);
+                    filter: drop-shadow(0 0 40px #f39c12) drop-shadow(0 0 50px #9b59b6);
+                }
+
+        @keyframes logoGlow {
+            0% {
+                filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
+            }
+
+            50% {
+                filter: drop-shadow(0 0 35px #f39c12) drop-shadow(0 0 50px #9b59b6);
+            }
+
+            100% {
+                filter: drop-shadow(0 0 20px #f1c40f) drop-shadow(0 0 35px #9b59b6);
+            }
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+            text-align: center;
+        }
+
+        .team-member img {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 3px solid #f39c12;
+            box-shadow: 0 0 20px #9b59b6, 0 0 35px #f39c12;
+            transition: transform 0.3s ease, filter 0.3s ease;
+        }
+
+            .team-member img:hover {
+                transform: scale(1.1) rotate(5deg);
+                filter: drop-shadow(0 0 30px #f39c12);
+            }
+
+        .team-member h3 {
+            margin-top: 15px;
+            font-size: 1.3rem;
+            color: #f1c40f;
+            text-shadow: 2px 2px 6px #9b59b6;
+        }
+
+        .team-member p {
+            font-size: 1rem;
+            color: #ecf0f1;
+            margin-top: 5px;
+            text-shadow: 1px 1px 4px #9b59b6;
+        }
+    </style>
+
+
+
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
+        <p>Send us a message and we’ll get back to you as soon as possible!</p>
+
+        <form id="contact-form">
+            <div class="form-row">
+                <input type="text" name="user_name" placeholder="Your Name*" required>
+                <input type="email" name="user_email" placeholder="Your Email*" required>
+            </div>
+            <textarea name="message" rows="6" placeholder="Your Message*" required></textarea>
+            <button type="submit">Send Message</button>
+            <p id="form-status"></p>
+        </form>
+    </section>
+
+    <!-- --- EMAILJS SCRIPT --- -->
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script>
+        emailjs.init("RKFYGApd6ZAyDYDoB");
+
+        const contactForm = document.getElementById('contact-form');
+        const formStatus = document.getElementById('form-status');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            emailjs.sendForm('service_bs9yxfc', 'template_tubvg22', this)
+                .then(() => {
+                    formStatus.textContent = "Message sent successfully!";
+                    contactForm.reset();
+                }, (error) => {
+                    formStatus.textContent = "Oops! Something went wrong.";
+                    console.error(error);
+                });
+        });
+    </script>
+
+
+    <style>
+        #contact-form {
+            max-width: 600px;
+            margin: 30px auto 0;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .form-row {
+            display: flex;
+            gap: 15px;
+        }
+
+            .form-row input {
+                flex: 1;
+                padding: 12px 15px;
+                border-radius: 8px;
+                border: none;
+                outline: none;
+                font-size: 1rem;
+                font-family: 'Montserrat', sans-serif;
+            }
+
+        #contact-form textarea {
             padding: 12px 15px;
             border-radius: 8px;
             border: none;
             outline: none;
             font-size: 1rem;
             font-family: 'Montserrat', sans-serif;
+            resize: none;
         }
 
-    #contact-form textarea {
-        padding: 12px 15px;
-        border-radius: 8px;
-        border: none;
-        outline: none;
-        font-size: 1rem;
-        font-family: 'Montserrat', sans-serif;
-        resize: none;
-    }
-
-    #contact-form button {
-        padding: 12px 20px;
-        border-radius: 8px;
-        border: none;
-        background: #f39c12;
-        color: #000;
-        font-weight: 700;
-        text-transform: uppercase;
-        cursor: pointer;
-        transition: 0.3s;
-    }
-
-        #contact-form button:hover {
-            background: #f1c40f;
-            transform: scale(1.05);
-        }
-
-    #form-status {
-        margin-top: 10px;
-        color: #f1c40f;
-        text-align: center;
-    }
-
-    @media (max-width: 600px) {
-        .form-row {
-            flex-direction: column;
-        }
-    }
-</style>
-
-<footer>
-    <div class="footer-top">
-        <div class="footer-left">
-            <img src="assets/images/logo.png" alt="Goblin Party Logo" class="footer-logo">
-        </div>
-
-        <div class="footer-center">
-            <div class="follow-text">FOLLOW US</div>
-            <div class="footer-social">
-                <a href="https://www.youtube.com/@GoblinPartyOfficial" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.instagram.com/goblinpartyofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
-            </div>
-        </div>
-
-        <!-- Footer right con los botones del header -->
-        <div class="footer-right">
-            <nav>
-                <div class="dropdown">
-                    <a href="#projects" class="dropbtn">
-                        Games
-                    </a>
-                    <div class="dropdown-content">
-                        <a href="#bonepath">Bone Path</a>
-                    </div>
-                </div>
-                <a href="indexNews.html">News</a>
-                <a href="#contact">Contact</a>
-                <a href="#about">About</a>
-            </nav>
-        </div>
-    </div>
-
-    <hr class="footer-divider">
-
-    <div class="footer-bottom">
-        <p>© 2025 Goblin Party. All rights reserved.</p>
-    </div>
-</footer>
-
-
-<style>
-    footer {
-        background: rgba(0,0,0,0.85);
-        color: #fff;
-        padding: 20px 40px;
-        text-align: center;
-    }
-
-    .footer-top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        max-width: 1200px;
-        margin: auto;
-        flex-wrap: wrap;
-        gap: 20px;
-    }
-
-    .footer-left .footer-logo {
-        width: 80px;
-        height: 80px;
-        border-radius: 12px;
-        animation: neonGlow 1.5s infinite alternate;
-    }
-
-    @keyframes neonGlow {
-        0% {
-            filter: drop-shadow(0 0 10px #f1c40f) drop-shadow(0 0 20px #9b59b6);
-            transform: scale(1);
-        }
-
-        50% {
-            filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6);
-            transform: scale(1.05) rotate(2deg);
-        }
-
-        100% {
-            filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
-            transform: scale(1);
-        }
-    }
-
-    .footer-center {
-        text-align: center;
-    }
-
-        .footer-center .follow-text {
+        #contact-form button {
+            padding: 12px 20px;
+            border-radius: 8px;
+            border: none;
+            background: #f39c12;
+            color: #000;
             font-weight: 700;
-            color: #f1c40f;
-            margin-bottom: 8px;
-            letter-spacing: 1px;
-            text-shadow: 1px 1px 3px #9b59b6;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
         }
 
-        .footer-center .footer-social {
+            #contact-form button:hover {
+                background: #f1c40f;
+                transform: scale(1.05);
+            }
+
+        #form-status {
+            margin-top: 10px;
+            color: #f1c40f;
+            text-align: center;
+        }
+
+        @media (max-width: 600px) {
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+
+
+
+    <style>
+        footer {
+            background: rgba(0,0,0,0.85);
+            color: #fff;
+            padding: 20px 40px;
+            text-align: center;
+        }
+
+        .footer-top {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: auto;
+            flex-wrap: wrap;
             gap: 20px;
         }
 
-            .footer-center .footer-social a {
-                color: #fff;
-                font-size: 2rem;
-                transition: 0.3s;
-                animation: neonIcons 1.5s infinite alternate;
+        .footer-left .footer-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 12px;
+            animation: neonGlow 1.5s infinite alternate;
+        }
+
+        @keyframes neonGlow {
+            0% {
+                filter: drop-shadow(0 0 10px #f1c40f) drop-shadow(0 0 20px #9b59b6);
+                transform: scale(1);
             }
 
-                .footer-center .footer-social a:hover {
-                    color: #f39c12;
-                    transform: scale(1.3) rotate(-10deg);
-                    text-shadow: 1px 1px 6px #f1c40f;
-                }
+            50% {
+                filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6);
+                transform: scale(1.05) rotate(2deg);
+            }
 
-    @keyframes neonIcons {
-        0% {
-            text-shadow: 0 0 5px #f1c40f, 0 0 10px #9b59b6;
+            100% {
+                filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
+                transform: scale(1);
+            }
         }
 
-        50% {
-            text-shadow: 0 0 20px #f39c12, 0 0 35px #9b59b6;
-        }
-
-        100% {
-            text-shadow: 0 0 10px #f1c40f, 0 0 20px #9b59b6;
-        }
-    }
-
-    .footer-divider {
-        border: 0;
-        height: 2px;
-        background: #f39c12;
-        margin: 20px 0;
-        max-width: 1200px;
-        margin-left: auto;
-        margin-right: auto;
-    }
-
-    .footer-bottom p {
-        margin: 0;
-        color: #ccc;
-        font-size: 0.9rem;
-        text-shadow: 1px 1px 3px #000;
-    }
-
-    @media(max-width: 800px) {
-        .footer-top {
-            flex-direction: column;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .footer-right nav {
-            flex-direction: column;
-            gap: 10px;
+        .footer-center {
             text-align: center;
         }
-    }
-</style>
 
-
-<script>
-    const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = 1;
-                entry.target.style.transform = 'translateY(0)';
+            .footer-center .follow-text {
+                font-weight: 700;
+                color: #f1c40f;
+                margin-bottom: 8px;
+                letter-spacing: 1px;
+                text-shadow: 1px 1px 3px #9b59b6;
             }
-        });
-    }, { threshold: 0.2 });
 
-    document.querySelectorAll('.hero, .section, .coming-soon, .social-icons, footer').forEach(el => observer.observe(el));
+            .footer-center .footer-social {
+                display: flex;
+                justify-content: center;
+                gap: 20px;
+            }
 
-    let lastScrollTop = 0;
-    const header = document.querySelector('header');
-    window.addEventListener('scroll', () => {
-        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-        if (scrollTop > lastScrollTop && scrollTop > 50) {
-            header.style.transform = 'translateY(-120px)';
-            header.style.background = 'rgba(0,0,0,0.35)';
-        } else {
-            header.style.transform = 'translateY(0)';
-            header.style.background = 'rgba(0,0,0,0.55)';
+                .footer-center .footer-social a {
+                    color: #fff;
+                    font-size: 2rem;
+                    transition: 0.3s;
+                    animation: neonIcons 1.5s infinite alternate;
+                }
+
+                    .footer-center .footer-social a:hover {
+                        color: #f39c12;
+                        transform: scale(1.3) rotate(-10deg);
+                        text-shadow: 1px 1px 6px #f1c40f;
+                    }
+
+        @keyframes neonIcons {
+            0% {
+                text-shadow: 0 0 5px #f1c40f, 0 0 10px #9b59b6;
+            }
+
+            50% {
+                text-shadow: 0 0 20px #f39c12, 0 0 35px #9b59b6;
+            }
+
+            100% {
+                text-shadow: 0 0 10px #f1c40f, 0 0 20px #9b59b6;
+            }
         }
-        lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-    });
-</script>
 
+        .footer-divider {
+            border: 0;
+            height: 2px;
+            background: #f39c12;
+            margin: 20px 0;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .footer-bottom p {
+            margin: 0;
+            color: #ccc;
+            font-size: 0.9rem;
+            text-shadow: 1px 1px 3px #000;
+        }
+
+        @media(max-width: 800px) {
+            .footer-top {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .footer-right nav {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+        }
+    </style>
+
+
+    <script>
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = 1;
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, { threshold: 0.2 });
+
+        document.querySelectorAll('.hero, .section, .coming-soon, .social-icons, footer').forEach(el => observer.observe(el));
+
+        let lastScrollTop = 0;
+        const header = document.querySelector('header');
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            if (scrollTop > lastScrollTop && scrollTop > 50) {
+                header.style.transform = 'translateY(-120px)';
+                header.style.background = 'rgba(0,0,0,0.35)';
+            } else {
+                header.style.transform = 'translateY(0)';
+                header.style.background = 'rgba(0,0,0,0.55)';
+            }
+            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
+        });
+    </script>
+    <footer>
+        <div class="footer-top">
+            <div class="footer-left">
+                <img src="assets/images/logo.png" alt="Goblin Party Logo" class="footer-logo">
+            </div>
+
+            <div class="footer-center">
+                <div class="follow-text">FOLLOW US</div>
+                <div class="footer-social">
+                    <a href="https://www.youtube.com/@GoblinPartyOfficial" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.instagram.com/goblinpartyofficial/" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Footer right con los botones del header -->
+            <div class="footer-right">
+                <nav>
+                    <div class="dropdown">
+                        <a href="#projects" class="dropbtn">
+                            Games
+                        </a>
+                        <div class="dropdown-content">
+                            <a href="#bonepath">Bone Path</a>
+                        </div>
+                    </div>
+                    <a href="indexNews.html">News</a>
+                    <a href="#contact">Contact</a>
+                    <a href="#about">About</a>
+                </nav>
+            </div>
+        </div>
+
+        <hr class="footer-divider">
+
+        <div class="footer-bottom">
+            <p>© 2025 Goblin Party. All rights reserved.</p>
+        </div>
+    </footer>
 </body>
 </html>
