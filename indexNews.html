@@ -450,12 +450,12 @@
 
     <!-- HEADER -->
     <header>
-        <!-- Logo -->
+        <!-- Logo a la izquierda -->
         <div class="logo">
             <a href="index.html"><img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img"></a>
         </div>
 
-        <!-- Hamburger -->
+        <!-- Hamburger a la derecha -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -477,7 +477,22 @@
     </header>
 
     <style>
-        /* Hamburger Styles */
+        /* Header general */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(0,0,0,0.55);
+            backdrop-filter: blur(12px);
+            border-bottom: 4px solid #f39c12;
+        }
+
+        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -508,12 +523,12 @@
                 transform: rotate(-45deg) translate(6px, -6px);
             }
 
-        /* Mobile Nav */
+        /* Mobile */
         @media(max-width: 800px) {
             header {
-                flex-direction: column;
+                flex-direction: row; /* logo izquierda, hamburger derecha */
+                justify-content: space-between;
                 align-items: center;
-                padding: 15px 20px;
             }
 
             .hamburger {
@@ -523,11 +538,11 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 70px;
-                right: 20px;
+                top: 70px; /* debajo del header */
+                right: 0;
+                left: 0;
                 background: rgba(0,0,0,0.95);
                 flex-direction: column;
-                width: 200px;
                 padding: 20px;
                 border-radius: 12px;
                 gap: 15px;
