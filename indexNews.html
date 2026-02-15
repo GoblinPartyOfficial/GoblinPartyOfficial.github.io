@@ -554,17 +554,23 @@
                     display: flex;
                 }
 
+            @media(max-width: 800px) {
                 nav .dropdown-content {
-                    position: relative;
+                    position: relative; /* ya no absolute */
                     top: 0;
-                    left: 0;
-                    background: none;
-                    padding: 0;
+                    right: 0; /* alineamos a la derecha */
+                    left: auto; /* anulamos el left */
+                    background: rgba(0,0,0,0.85);
+                    border-radius: 8px;
+                    padding: 10px 0;
                 }
 
                     nav .dropdown-content a {
-                        padding-left: 10px;
+                        padding-left: 15px;
+                        padding-right: 15px;
                     }
+            }
+
         }
 
         @media(min-width: 801px) {
