@@ -687,7 +687,6 @@
             }
 
         @media(max-width: 799px) {
-            /* Hero móvil sin fondo de imagen/video */
             .hero {
                 background: #3a1f5c; /* morado sólido */
                 min-height: 100vh;
@@ -696,26 +695,19 @@
                 justify-content: center;
                 align-items: center;
                 text-align: center;
-                padding-top: 50px;
-                padding-bottom: 50px;
+                padding: 50px 0;
             }
 
-                /* Ocultar cualquier video de fondo */
-                .hero video {
-                    display: none;
+                /* Ocultar video y hero-image si quieres */
+                .hero video,
+                .hero-image-mobile {
+                    display: none !important;
                 }
 
-            /* Ajuste del botón Coming Soon */
             .glass-button {
-                margin-top: 30px;
-            }
-
-            /* Ocultar la imagen de hero desktop si la tenías */
-            .hero-image-mobile {
-                display: none;
+                margin-top: 50px;
             }
         }
-
 
 
         @media(min-width: 1025px) {
