@@ -686,21 +686,36 @@
                 display: block;
             }
 
-        /* Solo para móviles */
         @media(max-width: 799px) {
-            /* Ocultar el fondo de hero por defecto en móvil */
+            /* Hero móvil sin fondo de imagen/video */
             .hero {
-                background: none;
+                background: #3a1f5c; /* morado sólido */
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                text-align: center;
+                padding-top: 50px;
+                padding-bottom: 50px;
             }
 
-            .hero-image-mobile {
-                display: block;
-            }
+                /* Ocultar cualquier video de fondo */
+                .hero video {
+                    display: none;
+                }
 
+            /* Ajuste del botón Coming Soon */
             .glass-button {
-                margin-top: 50px; /* Separación del header */
+                margin-top: 30px;
+            }
+
+            /* Ocultar la imagen de hero desktop si la tenías */
+            .hero-image-mobile {
+                display: none;
             }
         }
+
 
 
         @media(min-width: 1025px) {
