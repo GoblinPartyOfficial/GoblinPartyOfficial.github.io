@@ -686,29 +686,21 @@
                 display: block;
             }
 
+        /* Solo para móviles */
         @media(max-width: 799px) {
+            /* Ocultar el fondo de hero por defecto en móvil */
             .hero {
-                background: #3a1f5c; /* morado sólido */
-                min-height: 100vh;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                padding: 50px 0;
+                background: none;
             }
 
-                /* Ocultar video y hero-image si quieres */
-                .hero video,
-                .hero-image-mobile {
-                    display: none !important;
-                }
+            .hero-image-mobile {
+                display: block;
+            }
 
             .glass-button {
-                margin-top: 50px;
+                margin-top: 50px; /* Separación del header */
             }
         }
-
 
         @media(min-width: 1025px) {
             .hero {
@@ -742,7 +734,7 @@
                 padding-top: 50px;
                 padding-bottom: 50px;
                 min-height: 100vh;
-                background: url('assets/images/Fondo1.webp') no-repeat center top/cover;
+                background: none;
                 background-position: center top;
             }
 
