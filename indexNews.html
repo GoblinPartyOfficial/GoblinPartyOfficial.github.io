@@ -441,21 +441,6 @@
             object-fit: cover;  
             object-position: center 10%;
         }
-
-        @media(max-width: 800px) {
-            .hamburger {
-                display: flex;
-            }
-
-            nav {
-                display: none; /* solo se muestra al hacer clic */
-            }
-
-                nav.show {
-                    display: flex;
-                }
-        }
-
     </style>
 </head>
 <body>
@@ -489,6 +474,7 @@
             <a href="index.html#about">About</a>
         </nav>
     </header>
+
 
     <!-- NEWS SECTION -->
     <section class="section" id="news">
@@ -546,12 +532,6 @@
 
     <!-- --- SCRIPT DROPDOWNS --- -->
     <script>
-
-        hamburger.addEventListener('click', () => {
-            mobileNav.classList.toggle('show');
-            hamburger.classList.toggle('active');
-        });
-
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
 
