@@ -367,7 +367,6 @@
             text-shadow: 1px 1px 3px #000;
         }
 
-        /* Dropdown dentro del footer */
         .footer-right .dropdown {
             position: relative;
         }
@@ -632,7 +631,6 @@
                 hamburger.classList.toggle('active');
             });
 
-            // Dropdown dentro del nav móvil
             const dropdowns = mobileNav.querySelectorAll('.dropdown');
             dropdowns.forEach(drop => {
                 const btn = drop.querySelector('.dropbtn');
@@ -642,7 +640,6 @@
                 });
             });
 
-            // Cerrar menu si clic fuera
             document.addEventListener('click', (e) => {
                 if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
                     mobileNav.classList.remove('show');
@@ -670,9 +667,8 @@
 
     <style>
 
-        /* Imagen hero móvil */
         .hero-image-mobile {
-            display: none; /* Oculto por defecto para desktop */
+            display: none;
             width: 100%;
             max-width: 600px;
             margin: 30px auto 0;
@@ -686,9 +682,7 @@
                 display: block;
             }
 
-        /* Solo para móviles */
         @media(max-width: 799px) {
-            /* Ocultar el fondo de hero por defecto en móvil */
             .hero {
                 background: none;
             }
@@ -698,7 +692,7 @@
             }
 
             .glass-button {
-                margin-top: 50px; /* Separación del header */
+                margin-top: 50px;
             }
         }
 

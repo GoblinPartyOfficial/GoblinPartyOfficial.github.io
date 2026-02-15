@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&display=swap" rel="stylesheet">
     <style>
-        /* ---- GENERAL STYLES ---- */
         * {
             margin: 0;
             padding: 0;
@@ -48,7 +47,6 @@
             }
         }
 
-        /* ---- HEADER ---- */
         header {
             position: fixed;
             top: 0;
@@ -163,7 +161,6 @@
         } display: block;
         }
 
-        /* Hamburger Styles */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -209,7 +206,7 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 80px; /* altura del header */
+                top: 80px;
                 right: 20px;
                 flex-direction: column;
                 width: 200px;
@@ -226,7 +223,7 @@
                 }
 
                 nav .dropdown-content {
-                    position: relative; /* importante para móvil */
+                    position: relative;
                     top: 0;
                     left: 0;
                     background: none;
@@ -339,7 +336,6 @@
             }
         }
 
-        /* ---- FOOTER ---- */
         footer {
             background: rgba(0,0,0,0.85);
             text-align: center;
@@ -488,7 +484,6 @@
     </header>
 
     <style>
-        /* Header general */
         header {
             display: flex;
             justify-content: space-between;
@@ -503,7 +498,6 @@
             border-bottom: 4px solid #f39c12;
         }
 
-        /* Hamburger */
         .hamburger {
             display: none;
             flex-direction: column;
@@ -534,10 +528,9 @@
                 transform: rotate(-45deg) translate(6px, -6px);
             }
 
-        /* Mobile */
         @media(max-width: 800px) {
             header {
-                flex-direction: row; /* logo izquierda, hamburger derecha */
+                flex-direction: row;
                 justify-content: space-between;
                 align-items: center;
             }
@@ -549,7 +542,7 @@
             nav {
                 display: none;
                 position: absolute;
-                top: 70px; /* debajo del header */
+                top: 70px;
                 right: 0;
                 left: 0;
                 background: rgba(0,0,0,0.95);
@@ -567,10 +560,10 @@
 
             @media(max-width: 800px) {
                 nav .dropdown-content {
-                    position: relative; /* ya no absolute */
+                    position: relative;
                     top: 0;
-                    right: 0; /* alineamos a la derecha */
-                    left: auto; /* anulamos el left */
+                    right: 0;
+                    left: auto;
                     background: rgba(0,0,0,0.85);
                     border-radius: 8px;
                     padding: 10px 0;
@@ -600,7 +593,6 @@
             hamburger.classList.toggle('active');
         });
 
-        // Dropdown en móvil
         const dropdowns = mobileNav.querySelectorAll('.dropdown');
         dropdowns.forEach(drop => {
             const btn = drop.querySelector('.dropbtn');
@@ -610,7 +602,6 @@
             });
         });
 
-        // Cerrar menu si clic fuera
         document.addEventListener('click', (e) => {
             if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
                 mobileNav.classList.remove('show');
@@ -686,7 +677,6 @@
             hamburger.classList.toggle('active');
         });
 
-        // Dropdown dentro del nav móvil
         const dropdowns = mobileNav.querySelectorAll('.dropdown');
         dropdowns.forEach(drop => {
             const btn = drop.querySelector('.dropbtn');
@@ -696,7 +686,6 @@
             });
         });
 
-        // Cerrar menu si clic fuera
         document.addEventListener('click', (e) => {
             if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
                 mobileNav.classList.remove('show');
