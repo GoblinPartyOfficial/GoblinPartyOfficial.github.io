@@ -441,25 +441,42 @@
             object-fit: cover;  
             object-position: center 10%;
         }
+
+        @media(max-width: 800px) {
+            .hamburger {
+                display: flex;
+            }
+
+            nav {
+                display: none; /* solo se muestra al hacer clic */
+            }
+
+                nav.show {
+                    display: flex;
+                }
+        }
+
     </style>
 </head>
 <body>
 
     <!-- HEADER -->
     <header>
-        <div class="logo" onclick="window.location.href='#inicio'">
-            <a href="index.html" class="logo">
+        <!-- Logo -->
+        <div class="logo">
+            <a href="index.html">
                 <img src="assets/images/logo.png" alt="Goblin Party Logo" class="logo-img">
             </a>
-
         </div>
 
+        <!-- Hamburger para móvil -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
+        <!-- Menú -->
         <nav id="mobileNav">
             <div class="dropdown">
                 <a href="index.html#projects" class="dropbtn">Games <i class="fa-solid fa-caret-down"></i></a>
@@ -529,6 +546,12 @@
 
     <!-- --- SCRIPT DROPDOWNS --- -->
     <script>
+
+        hamburger.addEventListener('click', () => {
+            mobileNav.classList.toggle('show');
+            hamburger.classList.toggle('active');
+        });
+
         const hamburger = document.getElementById('hamburger');
         const mobileNav = document.getElementById('mobileNav');
 
