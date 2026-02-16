@@ -904,9 +904,7 @@ footer {
         }
 
     .footer-divider {
-        width: 90%; /* ocupa casi todo el ancho */
-        margin: 15px auto;
-        height: 3px;
+        display: none;
     }
 
     .footer-bottom p {
