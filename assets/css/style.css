@@ -749,6 +749,13 @@ footer {
     .hamburger {
         display: flex;
     }
+    .dropdown-menu {
+        left: 50%;
+        transform: translateX(-50%);
+        width: 90%; /* que no toque los bordes */
+        max-width: 300px; /* límite opcional */
+        text-align: center;
+    }
 
     nav {
         display: none;
