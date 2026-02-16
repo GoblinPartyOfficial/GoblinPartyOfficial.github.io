@@ -17,6 +17,7 @@
             <img src="assets/images/logo.webp" alt="Goblin Party Logo" class="logo-img">
         </div>
 
+        <!-- Hamburger para móvil -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
@@ -37,28 +38,30 @@
 
         <script>
             const hamburger = document.getElementById('hamburger');
-            const navMenu = document.getElementById('navMenu');
+            const mobileNav = document.getElementById('mobileNav');
 
             hamburger.addEventListener('click', () => {
+                mobileNav.classList.toggle('show');
                 hamburger.classList.toggle('active');
-                navMenu.classList.toggle('active');
             });
 
-            // Dropdown dentro del menú móvil
-            const dropdowns = document.querySelectorAll('.dropdown');
+            const dropdowns = mobileNav.querySelectorAll('.dropdown');
             dropdowns.forEach(drop => {
-                drop.addEventListener('click', e => {
+                const btn = drop.querySelector('.dropbtn');
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
                     drop.classList.toggle('active');
-                    e.stopPropagation();
                 });
             });
 
-            // Cierra dropdown si clic fuera
-            document.addEventListener('click', () => {
-                dropdowns.forEach(drop => drop.classList.remove('active'));
+            document.addEventListener('click', (e) => {
+                if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
+                    mobileNav.classList.remove('show');
+                    dropdowns.forEach(d => d.classList.remove('active'));
+                    hamburger.classList.remove('active');
+                }
             });
         </script>
-
 
     </header>
 
