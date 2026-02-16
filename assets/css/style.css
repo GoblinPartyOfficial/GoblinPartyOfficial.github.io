@@ -727,10 +727,16 @@ footer {
         z-index: 1;
     }
 
-        .social-vertical a {
-            font-size: 2.5rem; /* tamaño de los iconos igual que antes */
-            transition: 0.3s;
-        }
+    .social-vertical {
+        position: static; /* MUY IMPORTANTE */
+        transform: none; /* quitar centrado vertical fijo */
+        flex-direction: row; /* horizontal */
+        justify-content: center;
+        align-items: center;
+        gap: 25px;
+        margin-top: 20px;
+        order: 3; /* después del botón */
+    }
     header {
         flex-direction: row;
         justify-content: space-between;
