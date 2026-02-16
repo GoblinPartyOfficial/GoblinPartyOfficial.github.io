@@ -23,44 +23,44 @@
             <span></span>
         </div>
 
-        <nav id="navMenu">
-            <a href="#inicio">Inicio</a>
+        <nav id="mobileNav">
             <div class="dropdown">
-                <a href="#projects">Proyectos</a>
+                <a href="index.html#projects" class="dropbtn">Games <i class="fa-solid fa-caret-down"></i></a>
                 <div class="dropdown-content">
-                    <a href="#proyecto1">Proyecto 1</a>
-                    <a href="#proyecto2">Proyecto 2</a>
-                    <a href="#proyecto3">Proyecto 3</a>
+                    <a href="index.html#projects">Bone Path</a>
                 </div>
             </div>
-            <a href="#about">Sobre Nosotros</a>
-            <a href="#contact">Contacto</a>
+            <a href="indexNews.html">News</a>
+            <a href="index.html#contact">Contact</a>
+            <a href="index.html#about">About</a>
         </nav>
-    </header>
 
-    <script>
-        const hamburger = document.getElementById('hamburger');
-        const navMenu = document.getElementById('navMenu');
+        <script>
+            const hamburger = document.getElementById('hamburger');
+            const navMenu = document.getElementById('navMenu');
 
-        hamburger.addEventListener('click', () => {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-
-        // Dropdown dentro del menú móvil
-        const dropdowns = document.querySelectorAll('.dropdown');
-        dropdowns.forEach(drop => {
-            drop.addEventListener('click', e => {
-                drop.classList.toggle('active');
-                e.stopPropagation();
+            hamburger.addEventListener('click', () => {
+                hamburger.classList.toggle('active');
+                navMenu.classList.toggle('active');
             });
-        });
 
-        // Cierra dropdown si clic fuera
-        document.addEventListener('click', () => {
-            dropdowns.forEach(drop => drop.classList.remove('active'));
-        });
-    </script>
+            // Dropdown dentro del menú móvil
+            const dropdowns = document.querySelectorAll('.dropdown');
+            dropdowns.forEach(drop => {
+                drop.addEventListener('click', e => {
+                    drop.classList.toggle('active');
+                    e.stopPropagation();
+                });
+            });
+
+            // Cierra dropdown si clic fuera
+            document.addEventListener('click', () => {
+                dropdowns.forEach(drop => drop.classList.remove('active'));
+            });
+        </script>
+
+
+    </header>
 
     <section class="hero" id="inicio">
         <a href="#" class="glass-button" onclick="event.preventDefault()">Coming soon</a>
