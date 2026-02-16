@@ -18,17 +18,9 @@ body {
 }
 
 @keyframes bgShift {
-    0% {
-        background-position: 0% 50%;
-    }
-
-    50% {
-        background-position: 100% 50%;
-    }
-
-    100% {
-        background-position: 0% 50%;
-    }
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
 
 /* Header */
@@ -54,10 +46,9 @@ header {
     cursor: pointer;
     transition: transform 0.3s;
 }
-
-    .logo:hover {
-        transform: scale(1.1) rotate(-5deg);
-    }
+.logo:hover {
+    transform: scale(1.1) rotate(-5deg);
+}
 
 .logo-img {
     width: 60px;
@@ -66,48 +57,39 @@ header {
     transition: transform 0.4s, filter 0.4s;
     filter: drop-shadow(0 0 15px #f1c40f) drop-shadow(0 0 25px #9b59b6);
 }
-
-    .logo-img:hover {
-        transform: scale(1.15) rotate(8deg);
-        filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6);
-    }
+.logo-img:hover {
+    transform: scale(1.15) rotate(8deg);
+    filter: drop-shadow(0 0 25px #f39c12) drop-shadow(0 0 40px #9b59b6);
+}
 
 nav {
     display: flex;
     gap: 25px;
 }
-
-    nav a {
-        color: #fff;
-        text-decoration: none;
-        font-weight: 600;
-        text-transform: uppercase;
-        position: relative;
-        transition: 0.3s;
-    }
-
-        nav a::after {
-            content: '';
-            display: block;
-            height: 3px;
-            width: 0;
-            background: #f1c40f;
-            position: absolute;
-            bottom: -7px;
-            left: 0;
-            border-radius: 3px;
-            transition: 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+    position: relative;
+    transition: 0.3s;
+}
+nav a::after {
+    content: '';
+    display: block;
+    height: 3px;
+    width: 0;
+    background: #f1c40f;
+    position: absolute;
+    bottom: -7px;
+    left: 0;
+    border-radius: 3px;
+    transition: 0.3s;
+}
+nav a:hover::after { width: 100%; }
 
 /* Dropdown */
-.dropdown {
-    position: relative;
-}
-
+.dropdown { position: relative; }
 .dropdown-content {
     display: none;
     position: absolute;
@@ -123,23 +105,20 @@ nav {
     transition: all 0.4s ease;
     z-index: 1000;
 }
-
-    .dropdown-content a {
-        display: block;
-        color: #fff;
-        padding: 12px 16px;
-        font-weight: 500;
-        text-decoration: none;
-        transition: 0.3s;
-    }
-
-        .dropdown-content a:hover {
-            background: rgba(255,255,255,0.2);
-            color: #f1c40f;
-            transform: scale(1.05);
-            border-radius: 8px;
-        }
-
+.dropdown-content a {
+    display: block;
+    color: #fff;
+    padding: 12px 16px;
+    font-weight: 500;
+    text-decoration: none;
+    transition: 0.3s;
+}
+.dropdown-content a:hover {
+    background: rgba(255,255,255,0.2);
+    color: #f1c40f;
+    transform: scale(1.05);
+    border-radius: 8px;
+}
 .dropdown.active .dropdown-content {
     display: block;
     opacity: 1;
@@ -156,26 +135,16 @@ nav {
     cursor: pointer;
     z-index: 110;
 }
-
-    .hamburger span {
-        display: block;
-        height: 4px;
-        background: #fff;
-        border-radius: 2px;
-        transition: all 0.3s;
-    }
-
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(5px,5px);
-    }
-
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(6px,-6px);
-    }
+.hamburger span {
+    display: block;
+    height: 4px;
+    background: #fff;
+    border-radius: 2px;
+    transition: all 0.3s;
+}
+.hamburger.active span:nth-child(1) { transform: rotate(45deg) translate(5px,5px); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: rotate(-45deg) translate(6px,-6px); }
 
 /* Hero */
 .hero {
@@ -188,37 +157,18 @@ nav {
     text-align: center;
     overflow: hidden;
 }
-
-    .hero h2, .hero p {
-        filter: blur(10px);
-        opacity: 0;
-        transform: translateY(50px);
-        animation: blurIn 2s forwards;
-    }
-
-    .hero p {
-        animation: blurIn 2.5s forwards;
-        margin-top: 20px;
-    }
+.hero h2, .hero p {
+    filter: blur(10px);
+    opacity: 0;
+    transform: translateY(50px);
+    animation: blurIn 2s forwards;
+}
+.hero p { animation: blurIn 2.5s forwards; margin-top: 20px; }
 
 @keyframes blurIn {
-    0% {
-        filter: blur(10px);
-        opacity: 0;
-        transform: translateY(50px) scale(0.8);
-    }
-
-    50% {
-        filter: blur(5px);
-        opacity: 0.5;
-        transform: translateY(20px) scale(1.05);
-    }
-
-    100% {
-        filter: blur(0);
-        opacity: 1;
-        transform: translateY(0) scale(1);
-    }
+    0% { filter: blur(10px); opacity: 0; transform: translateY(50px) scale(0.8); }
+    50% { filter: blur(5px); opacity: 0.5; transform: translateY(20px) scale(1.05); }
+    100% { filter: blur(0); opacity: 1; transform: translateY(0) scale(1); }
 }
 
 .hero-image-mobile {
@@ -230,11 +180,7 @@ nav {
     overflow: hidden;
     box-shadow: 0 0 25px #9b59b6,0 0 35px #f39c12;
 }
-
-    .hero-image-mobile img {
-        width: 100%;
-        display: block;
-    }
+.hero-image-mobile img { width: 100%; display: block; }
 
 /* Glass Button */
 .glass-button {
@@ -254,26 +200,21 @@ nav {
     position: relative;
     z-index: 1;
 }
-
-    .glass-button::before {
-        content: '';
-        position: absolute;
-        top: -2px;
-        left: -2px;
-        right: -2px;
-        bottom: -2px;
-        border-radius: 14px;
-        background: linear-gradient(45deg, #f39c12,#9b59b6,#f1c40f,#9b59b6);
-        background-size: 400% 400%;
-        z-index: -1;
-        filter: blur(6px);
-        animation: glowGradient 8s linear infinite;
-    }
-
-    .glass-button:hover {
-        transform: scale(1.05);
-        box-shadow: 0 0 30px rgba(241,196,15,0.7),0 0 50px rgba(155,89,182,0.5);
-    }
+.glass-button::before {
+    content: '';
+    position: absolute;
+    top: -2px; left: -2px; right: -2px; bottom: -2px;
+    border-radius: 14px;
+    background: linear-gradient(45deg, #f39c12,#9b59b6,#f1c40f,#9b59b6);
+    background-size: 400% 400%;
+    z-index: -1;
+    filter: blur(6px);
+    animation: glowGradient 8s linear infinite;
+}
+.glass-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 30px rgba(241,196,15,0.7),0 0 50px rgba(155,89,182,0.5);
+}
 
 /* Social vertical */
 .social-vertical {
@@ -286,22 +227,21 @@ nav {
     gap: 20px;
     z-index: 1000;
 }
-
-    .social-vertical a {
-        color: #fff;
-        font-size: 2.5rem;
-        transition: 0.3s;
-    }
-
-        .social-vertical a:hover {
-            color: #f39c12;
-            transform: scale(1.3) rotate(-10deg);
-            text-shadow: 1px 1px 6px #f1c40f;
-        }
+.social-vertical a {
+    color: #fff;
+    font-size: 2.5rem;
+    transition: 0.3s;
+}
+.social-vertical a:hover {
+    color: #f39c12;
+    transform: scale(1.3) rotate(-10deg);
+    text-shadow: 1px 1px 6px #f1c40f;
+}
 
 /* Secciones, Cards, About, Team, Contact, Footer (igual que tu script original) */
 
 /* Media Queries (responsive) y hero-divider */
+/* =================== Media Queries (responsive) =================== */
 @media(max-width:799px) {
     .hero {
         background: none;
@@ -313,6 +253,36 @@ nav {
 
     .glass-button {
         margin-top: 50px;
+    }
+
+    /* Mostrar el hamburger */
+    .hamburger {
+        display: flex;
+    }
+
+    /* Ocultar nav por defecto en móvil */
+    #mobileNav {
+        display: none;
+        flex-direction: column;
+        gap: 15px;
+        background: rgba(0,0,0,0.85);
+        position: absolute;
+        top: 100%;
+        right: 0;
+        width: 100%;
+        padding: 20px;
+        border-radius: 0 0 12px 12px;
+        z-index: 105;
+    }
+
+        /* Mostrar nav cuando JS agrega la clase 'show' */
+        #mobileNav.show {
+            display: flex;
+        }
+
+    /* Opcional: ocultar social vertical en móvil */
+    .social-vertical {
+        display: none;
     }
 }
 
@@ -338,3 +308,4 @@ nav {
         box-shadow: 0 0 10px #f39c12, 0 0 15px #9b59b6;
     }
 }
+
