@@ -820,55 +820,100 @@ footer {
 
 }
 
-/* Botones del nav debajo de la imagen en móvil, horizontales centrados */
 @media(max-width:799px) {
-    #mobileNav {
-        display: flex !important; /* siempre visible en móvil */
-        flex-direction: row; /* horizontal */
-        justify-content: center; /* centrado */
-        flex-wrap: wrap; /* si no caben, saltan a la siguiente línea */
-        gap: 15px; /* espacio entre botones */
-        background: none; /* sin fondo */
-        position: static; /* dentro del flujo normal de la página */
-        width: auto; /* ancho ajustado al contenido */
-        padding: 0;
-        box-shadow: none;
-        margin-top: 20px; /* separa de la imagen */
+    .hero {
+        display: flex;
+        flex-direction: column; /* apila verticalmente */
+        align-items: center;
     }
 
-        #mobileNav a,
-        #mobileNav .dropbtn {
-            color: #fff;
-            font-size: 1rem;
-            font-weight: 600;
-            text-transform: uppercase;
-            background: rgba(0,0,0,0.4);
-            padding: 10px 15px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: 0.3s;
+    /* La imagen se mantiene arriba */
+    .hero-image-mobile {
+        order: 0; /* primero */
+        display: block;
+        width: 90%; /* opcional: ajusta al móvil */
+        margin: 0 auto 20px;
+    }
+
+    /* El botón "Coming soon" va debajo de la imagen */
+    .glass-button {
+        order: 1; /* después de la imagen */
+        margin-top: 20px;
+    }
+
+    /* Divider debajo del botón */
+    .hero-divider {
+        order: 2;
+    }
+
+    /* Social vertical lo dejamos fijo o puedes moverlo debajo si quieres */
+    .social-vertical {
+        order: 3;
+    }
+
+    footer {
+        padding: 20px 15px; /* menos padding lateral */
+        text-align: center;
+        background: rgba(0,0,0,0.85);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 20px; /* separa secciones */
+    }
+
+    .footer-top {
+        flex-direction: column; /* apila vertical */
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        max-width: 100%; /* quitar límite de 1200px */
+        margin: 0;
+    }
+
+    .footer-left,
+    .footer-center,
+    .footer-right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        text-align: center;
+        width: 100%;
+    }
+
+        .footer-left .footer-logo {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 10px;
         }
 
-            #mobileNav a:hover,
-            #mobileNav .dropbtn:hover {
-                background: rgba(243,156,18,0.8);
-                color: #000;
-            }
+        .footer-center .follow-text {
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
 
-    /* Dropdown interno sigue funcionando */
-    .dropdown-content {
-        position: absolute; /* desplegable normal */
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
+        .footer-center .footer-social a {
+            font-size: 1.8rem;
+            gap: 10px;
+        }
+
+        .footer-right nav {
+            flex-direction: column;
+            gap: 8px;
+            text-align: center;
+        }
+
+    .footer-divider {
+        width: 90%; /* ocupa casi todo el ancho */
+        margin: 15px auto;
+        height: 3px;
     }
 
-    /* Ocultamos la hamburguesa ya que los botones están visibles */
-    .hamburger {
-        display: none;
+    .footer-bottom p {
+        font-size: 0.85rem;
+        margin: 0;
     }
 }
-
 
 
 @media(min-width:1025px) {
