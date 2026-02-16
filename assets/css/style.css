@@ -616,6 +616,27 @@ footer {
 
 /* Media Queries */
 @media(max-width:900px) {
+
+    header nav {
+        display: none; /* Oculta los botones de nav principal */
+    }
+
+    #mobileNav {
+        display: none; /* Se mostrará solo con la hamburguesa */
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0,0,0,0.85);
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+        #mobileNav.show {
+            display: flex;
+        }
     .project-container {
         flex-direction: column;
         text-align: center;
