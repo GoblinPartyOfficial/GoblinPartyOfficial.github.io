@@ -39,6 +39,20 @@
             <script>
                 const hamburger = document.getElementById('hamburger');
                 const mobileNav = document.getElementById('mobileNav');
+                // --- Cerrar menú al hacer click en cualquier link principal ---
+                const navLinks = mobileNav.querySelectorAll('a');
+
+                navLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileNav.classList.remove('show');
+                        hamburger.classList.remove('active');
+
+                        // También cerramos cualquier dropdown abierto
+                        const dropdowns = mobileNav.querySelectorAll('.dropdown');
+                        dropdowns.forEach(d => d.classList.remove('active'));
+                    });
+                });
+
 
                 hamburger.addEventListener('click', () => {
                     mobileNav.classList.toggle('show');
