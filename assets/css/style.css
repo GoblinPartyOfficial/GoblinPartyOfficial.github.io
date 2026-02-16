@@ -744,7 +744,7 @@ footer {
         padding: 15px 20px;
     }
     input[type="email"] {
-        width: 100% !important;
+        width: 50%;
     }
     .hamburger {
         display: flex;
