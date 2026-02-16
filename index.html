@@ -54,6 +54,19 @@
                     });
                 });
 
+                // --- NUEVO: cerrar dropdown al hacer click en un link ---
+                const dropdownLinks = mobileNav.querySelectorAll('.dropdown-content a');
+                dropdownLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        const parentDropdown = link.closest('.dropdown');
+                        parentDropdown.classList.remove('active');
+
+                        // También cerramos el menú móvil al hacer click
+                        mobileNav.classList.remove('show');
+                        hamburger.classList.remove('active');
+                    });
+                });
+
                 document.addEventListener('click', (e) => {
                     if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
                         mobileNav.classList.remove('show');
@@ -62,6 +75,7 @@
                     }
                 });
             </script>
+
 
         </header>
 

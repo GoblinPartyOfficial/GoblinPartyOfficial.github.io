@@ -822,17 +822,36 @@ footer {
 
 @media(max-width:799px) {
     .hero {
-        background: none;
+        display: flex;
+        flex-direction: column; /* apila verticalmente */
+        align-items: center;
     }
 
+    /* La imagen se mantiene arriba */
     .hero-image-mobile {
+        order: 0; /* primero */
         display: block;
+        width: 90%; /* opcional: ajusta al móvil */
+        margin: 0 auto 20px;
     }
 
+    /* El botón "Coming soon" va debajo de la imagen */
     .glass-button {
-        margin-top: 50px;
+        order: 1; /* después de la imagen */
+        margin-top: 20px;
+    }
+
+    /* Divider debajo del botón */
+    .hero-divider {
+        order: 2;
+    }
+
+    /* Social vertical lo dejamos fijo o puedes moverlo debajo si quieres */
+    .social-vertical {
+        order: 3;
     }
 }
+
 
 @media(min-width:1025px) {
     .hero {
