@@ -688,229 +688,66 @@ footer {
 
 }
 
-@media(max-width:800px) {
+@media(max-width: 800px) {
     header {
-        flex-direction: column;
+        flex-direction: row;
+        justify-content: space-between;
         align-items: center;
         padding: 15px 20px;
     }
 
+    .hamburger {
+        display: flex;
+    }
+
     nav {
-        gap: 12px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-        nav a {
-            font-size: 0.9rem;
-        }
-
-    .hero {
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-    }
-
-        .hero h2 {
-            font-size: 2rem;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-        }
-
-    .glass-button {
-        padding: 12px 30px;
-        font-size: 1.2rem;
-        margin-top: 30px;
-    }
-
-    .social-vertical {
-        right: 10px;
-        gap: 15px;
-    }
-
-        .social-vertical a {
-            font-size: 2rem;
-        }
-
-    .gallery {
-        gap: 15px;
-    }
-
-        .gallery img {
-            max-width: 120px;
-        }
-
-    .section {
-        padding: 50px 15px;
-    }
-
-        .section h2 {
-            font-size: 2rem;
-        }
-
-        .section p {
-            font-size: 1rem;
-            line-height: 1.3;
-        }
-
-    .page-divider {
-        border: 0;
-        height: 4px; /* más visible que el original */
-        background: linear-gradient(90deg, #f39c12, #9b59b6, #f1c40f, #9b59b6);
-        background-size: 300% 100%;
-        animation: glowGradient 6s linear infinite;
-        margin: 20px 0;
-    }
-    footer {
-        padding: 15px;
-        font-size: 0.9rem;
-    }
-
-    .footer-top {
-        border-top: 2px solid #f39c12; /* línea visible arriba */
-        padding-top: 20px; /* separa la línea del contenido */
-        height: 4px; /* más visible que el original */
-        background: linear-gradient(90deg, #f39c12, #9b59b6, #f1c40f, #9b59b6);
-        background-size: 300% 100%;
-        animation: glowGradient 6s linear infinite;
-        margin: 20px 0;
-    }
-
-
-    .footer-right nav {
+        display: none;
+        position: absolute;
+        top: 80px;
+        right: 20px;
         flex-direction: column;
-        gap: 10px;
-        text-align: center;
+        width: 200px;
+        padding: 20px;
+        border-radius: 12px;
+        gap: 15px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+        background: rgba(0,0,0,0.95);
+        z-index: 200;
     }
 
-
-    footer {
-        position: relative; /* necesario para que el divider se posicione dentro */
-        padding: 20px 40px; /* tu padding original */
-        text-align: center;
-        background: rgba(0,0,0,0.85);
-    }
-
-    .footer-divider-css {
-        width: 100%;
-        height: 80px; /* ajusta según lo grande que quieras la curva */
-        background: #111; /* color del footer */
-        clip-path: polygon(0 20%, 100% 0%, 100% 100%, 0% 100%);
-        /* polygon crea un “marco” inclinado o en onda */
-    }
-
-
-    @keyframes glowGradient {
-        0% {
-            background-position: 0% 0%;
+        nav.show {
+            display: flex;
         }
 
-        50% {
-            background-position: 100% 0%;
+        nav .dropdown-content {
+            position: relative;
+            top: 0;
+            left: 0;
+            background: none;
+            padding: 0;
+            box-shadow: none;
         }
 
-        100% {
-            background-position: 0% 0%;
-        }
-    }
-
-
-
+            nav .dropdown-content a {
+                padding-left: 10px;
+            }
 }
 
-@media(max-width:799px) {
-    .hero {
-        display: flex;
-        flex-direction: column; /* apila verticalmente */
-        align-items: center;
-    }
-
-    /* La imagen se mantiene arriba */
-    .hero-image-mobile {
-        order: 0; /* primero */
-        display: block;
-        width: 90%; /* opcional: ajusta al móvil */
-        margin: 0 auto 20px;
-    }
-
-    /* El botón "Coming soon" va debajo de la imagen */
-    .glass-button {
-        order: 1; /* después de la imagen */
-        margin-top: 20px;
-    }
-
-    /* Divider debajo del botón */
-    .hero-divider {
-        order: 2;
-    }
-
-    /* Social vertical lo dejamos fijo o puedes moverlo debajo si quieres */
-    .social-vertical {
-        order: 3;
-    }
-
-    footer {
-        padding: 20px 15px; /* menos padding lateral */
-        text-align: center;
-        background: rgba(0,0,0,0.85);
-        display: flex;
+@media(max-width:950px) {
+    .news-container {
         flex-direction: column;
         align-items: center;
-        gap: 20px; /* separa secciones */
     }
 
-    .footer-top {
-        flex-direction: column; /* apila vertical */
-        justify-content: center;
-        align-items: center;
-        gap: 15px;
-        max-width: 100%; /* quitar límite de 1200px */
-        margin: 0;
+    .news-card {
+        width: 90%;
     }
-
-    .footer-left,
-    .footer-center,
-    .footer-right {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
-        width: 100%;
-    }
-
-        .footer-left .footer-logo {
-            display: none;
-        }
-
-        .footer-center .follow-text {
-            font-size: 1rem;
-            margin-bottom: 5px;
-        }
-
-        .footer-center .footer-social a {
-            font-size: 1.8rem;
-            gap: 10px;
-        }
-
-        .footer-right nav {
-            flex-direction: column;
-            gap: 8px;
-            text-align: center;
-        }
-
-    .footer-divider {
+}
+@media(min-width: 801px) {
+    .hamburger {
         display: none;
     }
-
-    .footer-bottom p {
-        font-size: 0.85rem;
-        margin: 0;
-    }
 }
-
 
 @media(min-width:1025px) {
     .hero {
