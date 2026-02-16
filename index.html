@@ -68,28 +68,18 @@
                     });
                 });
 
-                // --- Cerrar menú al hacer click en los links dentro del dropdown ---
+                // --- NUEVO: cerrar dropdown al hacer click en un link ---
                 const dropdownLinks = mobileNav.querySelectorAll('.dropdown-content a');
                 dropdownLinks.forEach(link => {
                     link.addEventListener('click', () => {
                         const parentDropdown = link.closest('.dropdown');
                         parentDropdown.classList.remove('active');
 
-                        // Cerrar todo el menú móvil
+                        // También cerramos el menú móvil al hacer click
                         mobileNav.classList.remove('show');
                         hamburger.classList.remove('active');
                     });
                 });
-
-                // --- Cerrar menú al hacer click en los links que NO son dropdowns ---
-                const normalLinks = mobileNav.querySelectorAll('> a'); // solo links directos de nav
-                normalLinks.forEach(link => {
-                    link.addEventListener('click', () => {
-                        mobileNav.classList.remove('show');
-                        hamburger.classList.remove('active');
-                    });
-                });
-
 
                 document.addEventListener('click', (e) => {
                     if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
