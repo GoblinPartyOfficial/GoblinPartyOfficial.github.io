@@ -413,15 +413,17 @@
             }
         }
 
-        .footer-divider {
-            border: 0;
-            height: 2px;
-            background: #f39c12;
-            margin: 20px 0;
-            max-width: 1200px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+.footer-divider {
+    border: 0;
+    height: 4px; /* más visible que el original */
+    width: 1300px; /* ajusta al largo que quieras */
+    margin: 20px auto; /* centra horizontalmente */
+    background: linear-gradient(90deg, #f39c12, #9b59b6, #f1c40f, #9b59b6);
+    background-size: 300% 100%;
+    animation: glowGradient 6s linear infinite;
+    border-radius: 2px; /* opcional, bordes redondeados */
+}
+
 
         .footer-bottom p {
             margin: 0;
