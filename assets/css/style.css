@@ -616,22 +616,36 @@ footer {
 
 /* Media Queries */
 @media(max-width:900px) {
+    header {
+        flex-direction: row; /* Logo y hamburguer en línea */
+        justify-content: space-between; /* Logo a la izquierda, hamburguer a la derecha */
+        align-items: center;
+        padding: 15px 20px;
+    }
 
+    .logo {
+        order: 1; /* Opcional, para asegurarte que esté primero */
+    }
+
+    .hamburger {
+        order: 2; /* Opcional, para asegurarte que esté después del logo */
+    }
     header nav {
         display: none; /* Oculta los botones de nav principal */
     }
 
     #mobileNav {
-        display: none; /* Se mostrará solo con la hamburguesa */
-        flex-direction: column;
-        gap: 15px;
+        display: none; /* Solo se muestra al activar la hamburguesa */
         position: absolute;
         top: 100%;
         right: 0;
-        background: rgba(0,0,0,0.85);
         width: 100%;
+        background: rgba(0,0,0,0.85);
+        flex-direction: column;
+        gap: 15px;
         padding: 20px;
         text-align: center;
+        z-index: 1000;
     }
 
         #mobileNav.show {
