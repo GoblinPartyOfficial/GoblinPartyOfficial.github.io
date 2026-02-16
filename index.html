@@ -40,11 +40,13 @@
             const hamburger = document.getElementById('hamburger');
             const mobileNav = document.getElementById('mobileNav');
 
+            // Toggle menú móvil
             hamburger.addEventListener('click', () => {
                 mobileNav.classList.toggle('show');
                 hamburger.classList.toggle('active');
             });
 
+            // Toggle dropdowns dentro del menú móvil
             const dropdowns = mobileNav.querySelectorAll('.dropdown');
             dropdowns.forEach(drop => {
                 const btn = drop.querySelector('.dropbtn');
@@ -54,6 +56,7 @@
                 });
             });
 
+            // Cerrar menú al hacer click fuera
             document.addEventListener('click', (e) => {
                 if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
                     mobileNav.classList.remove('show');
