@@ -689,26 +689,31 @@ footer {
 }
 
 @media(max-width: 800px) {
+    .hero {
+        display: flex;
+        flex-direction: column; /* columna vertical */
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    /* Imagen encima del botón */
     .hero-image-mobile {
-        display: block; /* ahora se ve */
-        width: 90%; /* ancho relativo al contenedor */
+        display: block; /* se muestra en móvil */
+        width: 90%; /* ancho relativo */
         max-width: 300px; /* tamaño máximo en móviles */
-        margin: 0 auto 20px; /* centrada y con separación abajo */
+        margin-bottom: 20px; /* separación abajo, hacia el botón */
         border-radius: 12px;
         overflow: hidden;
         box-shadow: 0 0 20px #9b59b6, 0 0 30px #f39c12;
-        z-index: 1; /* para que no quede detrás de otros elementos */
+        order: 1; /* primero en el flujo */
+        z-index: 1;
     }
 
-        .hero-image-mobile img {
-            width: 100%;
-            height: auto;
-            display: block;
-        }
-
-    /* Posicionar el botón “Coming Soon” debajo de la imagen */
     .glass-button {
-        margin-top: 10px; /* menos margen porque la imagen está encima */
+        margin-top: 0; /* ya no hace falta margen extra arriba */
+        order: 2; /* después de la imagen */
         z-index: 2;
         position: relative;
     }
