@@ -744,6 +744,12 @@ footer {
         padding: 15px 20px;
     }
 
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box; /* MUY IMPORTANTE */
+    }
     .hamburger {
         display: flex;
     }
