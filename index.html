@@ -17,56 +17,50 @@
             <img src="assets/images/logo.webp" alt="Goblin Party Logo" class="logo-img">
         </div>
 
-        <!-- Hamburger para móvil -->
         <div class="hamburger" id="hamburger">
             <span></span>
             <span></span>
             <span></span>
         </div>
 
-        <nav id="mobileNav">
+        <nav id="navMenu">
+            <a href="#inicio">Inicio</a>
             <div class="dropdown">
-                <a href="index.html#projects" class="dropbtn">Games <i class="fa-solid fa-caret-down"></i></a>
+                <a href="#projects">Proyectos</a>
                 <div class="dropdown-content">
-                    <a href="index.html#projects">Bone Path</a>
+                    <a href="#proyecto1">Proyecto 1</a>
+                    <a href="#proyecto2">Proyecto 2</a>
+                    <a href="#proyecto3">Proyecto 3</a>
                 </div>
             </div>
-            <a href="indexNews.html">News</a>
-            <a href="index.html#contact">Contact</a>
-            <a href="index.html#about">About</a>
+            <a href="#about">Sobre Nosotros</a>
+            <a href="#contact">Contacto</a>
         </nav>
-
-        <script>
-            const hamburger = document.getElementById('hamburger');
-            const mobileNav = document.getElementById('mobileNav');
-
-            // Toggle menú móvil
-            hamburger.addEventListener('click', () => {
-                mobileNav.classList.toggle('show');
-                hamburger.classList.toggle('active');
-            });
-
-            // Toggle dropdowns dentro del menú móvil
-            const dropdowns = mobileNav.querySelectorAll('.dropdown');
-            dropdowns.forEach(drop => {
-                const btn = drop.querySelector('.dropbtn');
-                btn.addEventListener('click', (e) => {
-                    e.preventDefault();
-                    drop.classList.toggle('active');
-                });
-            });
-
-            // Cerrar menú al hacer click fuera
-            document.addEventListener('click', (e) => {
-                if (!mobileNav.contains(e.target) && !hamburger.contains(e.target)) {
-                    mobileNav.classList.remove('show');
-                    dropdowns.forEach(d => d.classList.remove('active'));
-                    hamburger.classList.remove('active');
-                }
-            });
-        </script>
-
     </header>
+
+    <script>
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Dropdown dentro del menú móvil
+        const dropdowns = document.querySelectorAll('.dropdown');
+        dropdowns.forEach(drop => {
+            drop.addEventListener('click', e => {
+                drop.classList.toggle('active');
+                e.stopPropagation();
+            });
+        });
+
+        // Cierra dropdown si clic fuera
+        document.addEventListener('click', () => {
+            dropdowns.forEach(drop => drop.classList.remove('active'));
+        });
+    </script>
 
     <section class="hero" id="inicio">
         <a href="#" class="glass-button" onclick="event.preventDefault()">Coming soon</a>

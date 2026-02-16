@@ -147,31 +147,15 @@ nav {
 }
 
 /* Hamburger */
-/* Mostrar Hamburger en móviles */
 .hamburger {
-    display: flex;
-}
-
-/* Menú móvil oculto por defecto */
-nav#mobileNav {
     display: none;
     flex-direction: column;
-    gap: 15px;
-    background: rgba(0,0,0,0.85);
-    position: absolute;
-    top: 80px; /* debajo del header */
-    right: 20px;
-    padding: 20px;
-    border-radius: 12px;
-    z-index: 105;
-    width: 200px;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+    cursor: pointer;
+    z-index: 110;
 }
-
-    /* Mostrar menú al hacer click */
-    nav#mobileNav.show {
-        display: flex;
-    }
-
 
     .hamburger span {
         display: block;
@@ -645,6 +629,28 @@ footer {
     .project-info {
         margin-top: 20px;
     }
+    /* --- Menu hamburguesa móvil --- */
+    nav {
+        display: none; /* Oculto por defecto en móvil */
+        flex-direction: column;
+        gap: 15px;
+        position: absolute;
+        top: 100%;
+        right: 0;
+        background: rgba(0,0,0,0.85);
+        width: 100%;
+        padding: 20px;
+        text-align: center;
+    }
+
+        nav.active {
+            display: flex; /* Se muestra al activar hamburguesa */
+        }
+
+    .hamburger {
+        display: flex; /* Se muestra solo en móvil */
+    }
+
 }
 
 @media(max-width:800px) {
@@ -774,6 +780,8 @@ footer {
             background-position: 0% 0%;
         }
     }
+
+
 
 }
 
