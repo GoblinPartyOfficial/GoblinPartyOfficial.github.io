@@ -630,8 +630,8 @@ footer {
         margin-top: 20px;
     }
     /* --- Menu hamburguesa móvil --- */
-    nav {
-        display: none; /* Oculto por defecto en móvil */
+    nav.show {
+        display: flex; /* Oculto por defecto en móvil */
         flex-direction: column;
         gap: 15px;
         position: absolute;
